@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=
+    , initial-scale=1.0"
+    />
+    <title>images</title>
+
+    <style>
+      img {
+        display: block;
+        width: 50%;
+        margin: 1rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Images</h3>
+    <p>
+      Images can improve a design and the appeareance of any web/app thus,
+      increasing the user experience for the endUser.
+    </p>
+    <p>Accepted file formats JPEG, PNG, SVG, ICO, GIF, APNG, WEBP</p>
+
+    <hr />
+    <strong>Syntax</strong>
+
+    <img
+      src="specifies the path to the image that we want to display, wether is an external or internal image this is the place where we put the route tonshowcase such image"
+      alt="Where we specify the alternate text for the image in case it does not load onto our site/app or we want to add some information for screenReaders to make the image accessible."
+    />
+
+    <!-- Linking an internal Image within our folder structure -->
+    <img
+      src="../section-01-html/assets/imgs/wu-tang-guys.jpeg"
+      alt="Wu tang Clan Logo"
+      class="hipHopImages"
+    />
+
+    <!-- Linking an external Image -->
+    <img
+      src="https://losmarea.com/wp-content/uploads/2022/11/los-marea-slider-home.jpg"
+      alt="Best rock band ever in the world and in the universe"
+      class="hipHopImages"
+    />
+
+    <!-- Linking an external image with some width and height -->
+    <img
+      src="http://www.laut.de/Turnstile/Fotogalerien/Koeln,-Palladium,-2022-6813/turnstile-koeln-palladium-2022-good-feeling-hardcore-219427.jpg"
+      alt="Turnstile guitar player"
+      width="400"
+      height="200"
+    />
+
+    <!-- Linking an external file suh as gif      -->
+    <img
+      src="https://media.giphy.com/media/oYtMzktkQz4Jy/giphy.gif"
+      alt="Wu Tang Clan gif"
+    />
+
+    <!-- Having an image as a a-tag/link -->
+    <a href="https://en.wikipedia.org/wiki/Outkast" target="_blank">
+      <img
+        src="https://media.npr.org/assets/img/2020/11/13/outkastb-wflag_wide-265a1c04bb72a827735695a8503f585f246ffe14.jpg"
+        alt="Outkast Members"
+      />
+    </a>
+
+    <hr />
+    <!-- Using another element that wraps the img tag to provide more context on the screen, not really commonly used. -->
+
+    <h3>Using Figure Tag</h3>
+
+    <figure>
+      <img
+        src="https://media.npr.org/assets/img/2020/11/13/outkastb-wflag_wide-265a1c04bb72a827735695a8503f585f246ffe14.jpg"
+        alt="Outkast Members"
+      />
+      <figcaption>Image of Outkast, Big Boi and Dre3000</figcaption>
+    </figure>
+
+    <!-- You can place the figcaption element either above or below and it will be treated as a block element -->
+
+    <figure>
+      <figcaption>Image of Outkast, Big Boi and Dre3000</figcaption>
+      <img
+        src="https://media.npr.org/assets/img/2020/11/13/outkastb-wflag_wide-265a1c04bb72a827735695a8503f585f246ffe14.jpg"
+        alt="Outkast Members"
+      />
+    </figure>
+  </body>
+</html>

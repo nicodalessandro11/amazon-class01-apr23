@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inline vs Block Elements</title>
+    <style>
+      * {
+        font-family: Roboto, sans-serif;
+        font-size: 14px;
+      }
+      @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:100,300,700");
+
+      .border-div {
+        border: 1px solid black;
+        padding: 1rem;
+      }
+      .highlight {
+        background-color: #ee3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Inline Elements vs Block Elements</h1>
+    <!-- Intro -->
+    <p>
+      Before CSS became the standard of styling html elements within the web,
+      web developers had to rely on out of the box styling provided by HTML.
+      <br />
+      This type of styling is referred to both inline and block elements.
+    </p>
+    <!-- Block Elements -->
+    <p>
+      A block element occupies the entire horizontal space of its parent element
+      and vertical space equal to the height of its contents, thereby creating a
+      "block". Note: A block-level element always starts on a new line and takes
+      up the full width available (stretches out to the left and right as far as
+      it can).
+    </p>
+    <!-- Inline Elements -->
+    <p>
+      An inline element occupy the space space bounded by the tags defining the
+      element, instead of breaking the flow of the content.
+    </p>
+
+    <!-- Examples -->
+    <h2>Lets look at an example</h2>
+    <h4>Inline</h4>
+    <p>
+      Let's look at the following example which demonstrates an inline element:
+    </p>
+    <div class="border-div">
+      The following span is an <span class="highlight">inline element</span>;
+      its background has been colored to display both the beginning and end of
+      the inline element's influence.
+    </div>
+    <p>
+      In this example, the div block-level element contains some text. Within
+      that text is a span element, which is an inline element. Because the span
+      element is inline, the paragraph correctly renders as a single, unbroken
+      text flow, like this:
+    </p>
+    <hr />
+    <h2>Lets look at an example</h2>
+    <h4>Block</h4>
+    <p>
+      Now let's change that <span> into a block-level element, such as:</span>
+    </p>
+    <div class="border-div">
+      The following paragraph is a
+      <p class="highlight">block-level element;</p>
+      its background has been colored to display both the beginning and end of
+      the block-level element's influence.
+    </div>
+
+    <h3>Important</h3>
+    <p>
+      You can change the visual presentation of an element using the CSS display
+      property. For example, by changing the value of display from "inline" to
+      "block", you can tell the browser to render the inline element in a block
+      box rather than an inline box, and vice versa.
+    </p>
+    <p>
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements#list_of_inline_elements"
+        >List of Inline Elements</a
+      >
+    </p>
+    <p>
+      <a
+        href="https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements#elements"
+        >List of Block Elements</a
+      >
+    </p>
+  </body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Links</title>
+  </head>
+  <body>
+    <h3>Anchor Tags - aka LINKS</h3>
+    <p>
+      Links are found in nearly all web pages. Links allow users to click their
+      way from page to page.
+    </p>
+
+    <p>
+      HTML Links are hyperlinks, you can clock on a link and jump to another
+      document or another website. This means that links can be either
+      internal(within the document or folder) or they can be external (website,
+      other app)
+    </p>
+
+    <strong>Syntax</strong>
+
+    <!-- External Route -->
+    <a href="https://www.ironhack.com/en">Ironhack</a>
+    <!-- Internal route -->
+    <a href="../section-01-html/01-basic-layout.html">Basic layout</a>
+
+    <!-- External Route with _blank
+    Opens anchor tag in new browswer window  -->
+    <a href="https://wutangclan.com/" target="_blank" rel="noopener noreferrer"
+      >Wu Tang</a
+    >
+    <!-- Internal Route using an ID -->
+    <a href="#wuTangForever">Take me to the wu</a>
+
+    <ul>
+      <li>
+        <b>_self</b> - this is set by default although, we cannot see it, it
+        opens the anchored element wihtin the same windpw/tab
+        <br />
+        <p>
+          Example:
+
+          <a href="https://wutangclan.com/" target="_self">Self - Wu Tang</a>
+        </p>
+      </li>
+      <li>
+        <b>_blank</b> - opens anchored element in a new window or tab
+        <p>
+          Example:
+
+          <a
+            href="https://wutangclan.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Blank - Wu Tang</a
+          >
+        </p>
+      </li>
+      <li>
+        <b>_parent</b> - opens the anchored element in the parent frame
+
+        <p>
+          Example:
+
+          <a
+            href="https://wutangclan.com/"
+            target="_parent"
+            rel="noopener noreferrer"
+            >Parent - Wu Tang</a
+          >
+        </p>
+      </li>
+      <li>
+        <b>_top</b> Opens the anchored element in the full body of the window
+
+        <p>
+          Example:
+
+          <a
+            href="https://wutangclan.com/"
+            target="_top"
+            rel="noopener noreferrer"
+            >Top - Wu Tang</a
+          >
+        </p>
+      </li>
+    </ul>
+
+    <hr />
+    <p>
+      By default, the linked page or document will be displayed in the current
+      browser window. If we want to change this, we can by using what is known
+      as the <b>target</b> attribute.
+    </p>
+
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde accusamus
+      architecto modi animi eos libero tempore, sed commodi obcaecati quaerat ab
+      impedit, aliquid, eveniet quidem facere quia possimus voluptate id.
+    </p>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis minus
+      porro ex sint reiciendis illo nulla nobis architecto praesentium! Eligendi
+      harum illo aperiam possimus repellat quas neque culpa. Ipsam, nulla?
+    </p>
+
+    <p id="wuTangForever">Hello Students :)</p>
+  </body>
+</html>

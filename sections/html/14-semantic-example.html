@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semantic Site</title>
+
+    <!-- CSS Style Tag to use within the head tag -->
+    <style>
+      /* Universal Selector for whole document */
+      * {
+        box-sizing: border-box;
+        /* margin: 0; */
+      }
+
+      body {
+        color: #333;
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.4;
+      }
+
+      ul {
+        padding: 0;
+        list-style: none;
+      }
+
+      #header {
+        margin-bottom: 15px;
+        background: #333;
+        color: white;
+        padding: 10px;
+      }
+
+      #main {
+        float: left;
+        width: 69%;
+      }
+
+      #sidebar {
+        float: right;
+        width: 29%;
+      }
+
+      .clr {
+        clear: both;
+      }
+
+      #footer {
+        background: #333;
+        color: white;
+        padding: 10px;
+      }
+
+      .text-center {
+        display: block;
+        text-align: center;
+      }
+
+      .card {
+        background: #f4f4f4;
+        padding: 20px;
+        margin-bottom: 10px;
+        border: solid 1px black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header id="header" class="card text-center">
+      <h1 class="">My Website</h1>
+      <p class="">Just another website</p>
+    </header>
+    <!-- Main Content -->
+    <main id="main">
+      <!-- Welcome Section -->
+      <section id="welcome" class="card">
+        <h2>Welcome to our Website</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+          obcaecati illo nobis earum sint. Placeat, obcaecati laborum? Quae,
+          eveniet vero quidem pariatur aliquam incidunt magnam eum, sint dolorum
+          aliquid inventore. <br />
+          <a href="#" class="text-center"> Click For More</a>
+        </p>
+      </section>
+      <!-- Blog Section -->
+      <section id="blog">
+        <h2>From Our Blog</h2>
+        <!-- Article #1 -->
+        <article class="article">
+          <h3>Article One</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae
+            quos dolorum in dolor nihil? Ex et, numquam perferendis dicta
+            aspernatur saepe! Doloremque adipisci natus ipsam doloribus? Ratione
+            non error odit?
+          </p>
+        </article>
+        <!-- Article #2 -->
+        <article class="article">
+          <h3>Article Two</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae
+            quos dolorum in dolor nihil? Ex et, numquam perferendis dicta
+            aspernatur saepe! Doloremque adipisci natus ipsam doloribus? Ratione
+            non error odit?
+          </p>
+        </article>
+      </section>
+    </main>
+    <!-- Aside Content - Sidebar -->
+    <aside id="sidebar" class="card">
+      <!-- title -->
+      <h3>Navigation</h3>
+      <!-- navigation -->
+      <nav>
+        <ul id="main-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <hr />
+      <button>Contact Us</button>
+      <ul>
+        <li><strong>Address:</strong>1234 Abbery road, London, 08012, UK</li>
+        <li><strong>Phone:</strong>+49 1234 - 1234</li>
+        <li><strong>Email:</strong>info@abbeyroadstudios.uk</li>
+      </ul>
+    </aside>
+    <div class="clr"></div>
+    <!-- Footer  -->
+    <footer id="footer" class="text-center">
+      <p>Copyright &copy;; My website 2022</p>
+    </footer>
+  </body>
+</html>
