@@ -28,3 +28,12 @@
       </li>
    </ul>
 </details>
+
+## Links de Ayuda
+
+- [Video Tutorials](#video-tutorials)
+  - [Command Line Crash Course](https://youtu.be/uwAqEzhyjtw)
+  - [HTML Crash Course - English](https://youtu.be/UB1O30fR-EE)
+  - [HTML Crash Course - Spanish](https://www.youtube.com/watch?v=rbuYtrNUxg4)
+  - [CSS Crash Course - English](https://youtu.be/yfoY53QXEnI)
+  - [CSS Crash Course - Spanish](https://www.youtube.com/watch?v=wZniZEbPAzk)
