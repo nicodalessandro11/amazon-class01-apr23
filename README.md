@@ -10,3 +10,20 @@
 ## Link a Zoom
 
 [Link Video Zoom](https://ironhack.zoom.us/j/98932082308)
+
+## Estructura de Carpetas
+
+<details>
+   <summary>Table of Contents</summary>
+   <ul>
+      <li>
+       <a href="">HTML Basics</a>
+      </li>
+      <li>
+       <a href="">CSS Basics</a>
+      </li>
+      <li>
+       <a href="">Javascript Basics</a>
+      </li>
+   </ul>
+</details>
