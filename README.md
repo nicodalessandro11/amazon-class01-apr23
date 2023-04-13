@@ -31,6 +31,12 @@
 
 ## Links de Ayuda
 
+- [VS Code - Video Tutoriales](#vscode-video-tutorials)
+
+  - [VS Code Install - Windows](https://www.youtube.com/watch?v=X_Z7d04x9-E)
+  - [VS Code Install - mac](https://www.youtube.com/watch?v=5vcQAfvDsz0)
+  - [Como abilitar extension 'Live Server' dentro de VS Code](https://www.geeksforgeeks.org/how-to-enable-live-server-on-visual-studio-code/)
+
 - [Video Tutorials](#video-tutorials)
   - [Command Line Crash Course](https://youtu.be/uwAqEzhyjtw)
   - [HTML Crash Course - English](https://youtu.be/UB1O30fR-EE)
@@ -39,6 +45,44 @@
   - [CSS Crash Course - Spanish](https://www.youtube.com/watch?v=wZniZEbPAzk)
   - [Git & Github Tutorial - English](https://www.youtube.com/watch?v=HkdAHXoRtos)
   - [Git & Github Tutorial - Spanish](https://www.youtube.com/watch?v=vlCXdvcgiE0)
+
+<hr />
+
+## Git
+
+Git es una herramienta de control de versiones que nos ayuda a guardar y seguir los cambios que hacemos en un proyecto de computadora.
+
+### ¿Para qué sirve?
+
+Git es muy útil cuando trabajamos en proyectos grandes con otros programadores, porque nos permite guardar y compartir fácilmente el código que estamos escribiendo y asegurarnos de que todo el mundo tenga la última versión del proyecto.
+
+### ¿Cómo lo usamos?
+
+Usamos Git a través de la línea de comando de la computadora, y podemos hacer cosas como crear un nuevo proyecto, guardar cambios, y ver el historial de cambios que hemos hecho en el proyecto.
+
+### Ejemplo
+
+Digamos que estamos trabajando en una página web sencilla y queremos hacer algunos cambios en el diseño. Usamos Git para guardar los cambios que hacemos en los archivos de la página web y luego los subimos a GitHub para que otros programadores puedan ver los cambios y agregar sus propias mejoras.
+
+Por ejemplo, si queremos cambiar el color de fondo de la página a azul, usamos Git para guardar ese cambio en los archivos de la página web. Luego, subimos los archivos a GitHub para que otros programadores puedan ver el cambio y agregar su propio código para hacer que la página se vea aún mejor. ¡Es como si estuviéramos pintando un dibujo juntos y cada uno agrega su propio toque para que el dibujo sea más hermoso!
+
+<hr />
+
+## Github
+
+GitHub es un sitio web que nos permite guardar y compartir proyectos de computadora con otros programadores.
+
+### ¿Para qué sirve?
+
+GitHub es muy útil cuando trabajamos en proyectos grandes con otros programadores, porque nos permite compartir fácilmente el código que estamos escribiendo y colaborar en el proyecto. También podemos usar GitHub para controlar las versiones de nuestro proyecto y asegurarnos de que todo el equipo tenga la última versión del proyecto.
+
+### ¿Cómo lo usamos?
+
+Podemos usar GitHub para subir nuestros proyectos de computadora, agregar otros programadores al proyecto, trabajar en diferentes versiones del proyecto, y colaborar con otros programadores en el proyecto.
+
+### Ejemplo
+
+Por ejemplo, si estamos trabajando en un proyecto para crear una aplicación de juego, podemos usar GitHub para guardar el código que estamos escribiendo, agregar otros programadores al proyecto para que puedan ayudarnos a escribir el código, y trabajar en diferentes versiones de la aplicación de juego para asegurarnos de que todo esté funcionando correctamente. ¡Es como si estuviéramos jugando un juego en equipo y trabajando juntos para ganar!
 
 ## Comandos de Git
 
