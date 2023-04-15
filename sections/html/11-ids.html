@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IDs</title>
+
+    <!-- Queremos programas escalables, que tengan sus archivos segmentados, por proposito de clase, agrego los estilos directos dentro del head tag para poder tener todo en un solo lugar. -->
+    <style>
+      #teacher {
+        /* clave : "valor" */
+        color: red;
+      }
+    </style>
   </head>
   <body>
     <a href="#ultimoParrafo">Llevame a ultimo parrafo</a>
@@ -31,6 +39,9 @@
 
     <br id="breakline" />
 
+    <h1 id="teacher">Diego</h1>
+    <div id="mifecha"></div>
+
     <h1 id="gamers">Ruben Y aleix juegan playstation</h1>
 
     <h4 id="aleix">Aleix es un crack!</h4>
@@ -52,5 +63,14 @@
       tener muchos ID, pero los demás deben ser definidos de otra forma, como
       por medio de un script interactuando con el DOM.
     </p>
+
+    <script>
+      let date = Date();
+      let someInfo = "Hello lovely world!";
+      // console.log(date);
+      let container = document.querySelector("#mifecha");
+      // console.log(container);
+      container.innerHTML = someInfo;
+    </script>
   </body>
 </html>

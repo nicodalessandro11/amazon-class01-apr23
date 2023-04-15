@@ -132,7 +132,13 @@
     <div class="clr"></div>
     <!-- Footer  -->
     <footer id="footer" class="text-center">
-      <p>Copyright &copy;; My website 2022</p>
+      <p>Copyright &copy;; My website <span id="date-foot"></span></p>
     </footer>
   </body>
+  <script>
+    const date = Date();
+    console.log(date);
+    let dateCont = document.querySelector("#date-foot");
+    dateCont.innerHTML = date.slice(0, 15);
+  </script>
 </html>

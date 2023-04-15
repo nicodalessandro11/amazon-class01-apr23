@@ -8,6 +8,13 @@
     <style>
       .band-name {
         font-size: 45px;
+        color: red;
+      }
+      .arg {
+        color: blue;
+      }
+      .otra-banda {
+        color: green;
       }
     </style>
   </head>
@@ -49,7 +56,13 @@
         The Red Hot Chilli Peppers
       </li>
       <li class="band-name arg rock">Soda Stereo</li>
+      <li class="band-name otra-banda"></li>
       <li class="band-name vzla funk">Los Amigos Invisibles</li>
     </ul>
   </body>
+  <script>
+    let charly = "Charly Garcia";
+    let cont = document.querySelector(".otra-banda");
+    cont.innerText = charly;
+  </script>
 </html>
