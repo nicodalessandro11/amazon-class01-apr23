@@ -1,4 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+/* Roboto Font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;1,100&display=swap");
+
+/* Dongle Font */
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@700&display=swap");
+
+.primary-heading {
+  font-family: "Roboto", sans-serif;
+  font-size: 80px;
+  font-weight: 100;
+  font-style: italic;
+  text-decoration: line-through;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.second-font {
+  font-family: "Dongle", sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+}
 
 .external-css-font-file {
   font-family: "Roboto", sans-serif;

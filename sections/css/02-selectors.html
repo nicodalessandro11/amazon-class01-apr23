@@ -23,9 +23,9 @@
 
       /* Puede utilizar el selector universal para restablecer el relleno y el margen por defecto del navegador a cero en la parte superior del archivo antes de añadir cualquier otro estilo: */
       * {
-        background-color: #fafafa;
-        /* padding: 0;
-        margin: 0; */
+        background-color: #fdfdfd;
+        /* padding: 1rem; */
+        /* margin: 0; */
       }
 
       /* CSS Type Selector */
@@ -33,7 +33,7 @@
       /* Para utilizarlo, mencione el nombre del elemento HTML. */
       /* Por ejemplo, si quieres aplicar un estilo a cada uno de los H1 del documento HTML, debes especificar el elemento h1: */
       h1 {
-        color: white;
+        color: rgb(189, 66, 66);
         text-decoration: underline;
       }
 
@@ -46,7 +46,7 @@
       }
 
       #about {
-        color: white;
+        color: rgb(163, 26, 26);
       }
 
       /* CSS CLASS SELECTOR */
@@ -55,6 +55,10 @@
       /* Las clases son reutilizables, lo que las convierte en una buena opción para practicar el desarrollo DRY. DRY es un principio de programación y es la abreviatura de "Don't Repeat Yourself" (no te repitas). Como su nombre indica, el objetivo es evitar escribir código repetitivo siempre que sea posible. */
       .primary-heading {
         color: green;
+      }
+
+      .heading-variation {
+        text-decoration: line-through;
       }
 
       /* LESSON 2 - Wednesday January 11, 2023 */
@@ -247,8 +251,9 @@
 
     <section id="examples">
       <div id="welcome">
-        <h2 class="primary-heading">Welcome</h2>
-        <h1>uexample</h1>
+        <h2 id="specific-example" class="primary-heading">Welcome</h2>
+        <h1>Example - Using type selector</h1>
+
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam
           ipsum quis, iste, libero sit enim tempora blanditiis doloribus error
@@ -256,6 +261,7 @@
           porro assumenda.
         </p>
       </div>
+
       <hr />
       <div id="about">
         <h2>About</h2>
