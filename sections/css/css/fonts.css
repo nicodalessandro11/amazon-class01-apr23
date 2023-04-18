@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+
+.external-css-font-file {
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+}
+
+.external-google-font-declaration-with-link-inside-html {
+  font-family: "Merriweather", serif;
+  font-size: 32px;
+  font-weight: 300;
+  font-style: italic;
+}
+
+#welcome p span {
+  font-size: 60px;
+}
+
+.example-specificity .explanation-div .hello #rock {
+  color: blue;
+  font-family: "Merriweather", serif;
+}
+
+#first-div #second-div #third-div p {
+  color: pink;
+}

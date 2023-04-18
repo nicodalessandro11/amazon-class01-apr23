@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Background Images</title>
+
+    <style>
+      /* En CSS, la propiedad background-image se utiliza para establecer la imagen de fondo de un elemento. El valor de la propiedad es la URL del archivo de imagen que desea usar como fondo.
+
+        Las propiedades de fondo o background-image son intercambiables y aceptan una cadena URL que enlaza a un archivo de imagen. Puedes usar archivos JPG, PNG, SVG, GIF y WEBP para imágenes de fondo.
+
+        Aquí hay un ejemplo de cómo podría usarlo:  */
+
+      body {
+        background-image: url("https://extrachill.com/wp-content/uploads/2021/06/red-hot-chili-peppers-logo-1024x776.jpeg");
+      }
+
+      /* Esto establece el fondo del elemento body en la imagen ubicada en mi-imagen.jpg.
+
+        También puedes especificar varias imágenes para usar como fondo, separadas por comas, estas imágenes se usarán como capas. La primera imagen estará en la parte superior y la última en la parte inferior. */
+
+      /* body {
+        background-image: url("https://extrachill.com/wp-content/uploads/2021/06/red-hot-chili-peppers-logo-1024x776.jpeg"),
+          url("https://cdn.shopify.com/s/files/1/0882/5118/products/Sublime-40-oz-To-Freedom-Vinyl-2-LP-2194411_1024x1024.jpg?v=1469650677");
+      } */
+
+      /* Además, puedes usar CSS para controlar la posición, el tamaño y el comportamiento de repetición de las imágenes de fondo.
+        La propiedad background-position te permite especificar la posición de la imagen de fondo dentro del elemento.
+        La propiedad background-size te permite especificar el tamaño de la imagen de fondo.
+        La propiedad background-repeat te permite especificar si la imagen de fondo debe repetirse y, de ser así, cómo debe repetirse.
+        Aquí hay un ejemplo de cómo podría usar todas estas propiedades juntas: */
+
+      body {
+        background-image: url("https://extrachill.com/wp-content/uploads/2021/06/red-hot-chili-peppers-logo-1024x776.jpeg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 500px;
+      }
+      /* Esto establece la imagen de fondo del body a mi-imagen.jpg, no la repite, la centra y la escala para cubrir todo el elemento.
+      
+      También puedes usar otras propiedades CSS como background-attachment que controlará el comportamiento de desplazamiento de la imagen de fondo y background-origin para controlar el área de posicionamiento de las imágenes de fondo. */
+    </style>
+  </head>
+  <body></body>
+</html>

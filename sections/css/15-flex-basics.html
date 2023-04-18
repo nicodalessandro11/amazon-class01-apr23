@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Flexbox Basics</title>
+    <style>
+      /* 
+        align-content: 
+                        flex-start
+                        flex-end
+                        center
+                        space-between
+                        space-around
+                        stretch
+         */
+      /* align-items:
+                    stretch
+                    center
+                    flex-start
+                    flex-end
+                    baseline
+                    initial
+                    inherit;
+        */
+      /*
+        justify-content: 
+                        flex-start
+                        flex-end
+                        center
+                        space-between
+                        space-around
+                        space-evenly 
+         */
+
+      * {
+        /* border: solid 1px red; */
+        /* outline: solid 1px red; */
+      }
+
+      body {
+        /* web safe fonts */
+        /* font-family: Arial, Helvetica, sans-serif; */
+        /* Google Font */
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        line-height: 1em;
+      }
+      .small-img {
+        width: 30%;
+      }
+      .img-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      li > p:nth-child(1) {
+        text-decoration: underline;
+      }
+
+      /* example 0 */
+
+      #container0 {
+        outline: 1px solid red !important;
+
+        /* Image Properties */
+        /* background-image: url("https://www.bmi.com/cache/images/news/2021/Rawayana_770_433_70_s.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 1;
+        width: auto; */
+
+        /* padding: 1rem; */
+        height: 20rem;
+        margin: 1rem 0;
+        /* Flex Properties */
+        display: flex;
+        /* NO FLEX DIRECTION === flex-row una vez tengamos accionado el property 'display:flex' */
+        flex-direction: row;
+        justify-content: space-around;
+        /* align-items: flex-end; */
+        align-content: center;
+        gap: 20px;
+      }
+
+      #container0 h1 {
+        color: black;
+        border: 1px solid red;
+      }
+
+      #container0 h1:nth-child(1) {
+        order: 3;
+      }
+
+      #container0 h1:nth-child(2) {
+        order: 1;
+      }
+
+      #container0 h1:nth-child(3) {
+        order: 2;
+        /* align-self: center; */
+      }
+
+      /* example #1 */
+      #container {
+        outline: 1px solid red !important;
+        margin: 1rem 0;
+        display: flex;
+
+        /* flex-direction: column; */
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        /* shorthand */
+        /* flex-flow: row wrap; */
+      }
+
+      .item {
+        background: #f4f4f4;
+        border: #ccc solid 1px;
+        padding: 1rem;
+        text-align: center;
+        margin: 0.75rem;
+        flex: 3;
+      }
+
+      .item:first-child {
+        flex: 1;
+      }
+
+      /* example #2 */
+      .wrapper {
+        margin: 1rem 0;
+        padding: 0.5rem;
+        outline: 1px solid red !important;
+        display: flex;
+        /* long version */
+        /* flex-wrap: wrap;
+        flex-direction: row; */
+        /* shorthand */
+        flex-flow: row wrap;
+
+        font-weight: bold;
+        text-align: center;
+      }
+
+      /* Aca coloquialmente el css esta parseandose como, hey mira todo lo que esta adentro de la clase wrapper y me le colocas estas propiedades mediante el selector universal :) 
+
+      WU TANG */
+      .wrapper > * {
+        padding: 10px;
+        flex: 1 100%;
+      }
+
+      .header {
+        background: tomato;
+      }
+
+      .footer {
+        background: lightgreen;
+      }
+
+      .main {
+        text-align: left;
+        background: deepskyblue;
+      }
+
+      .aside-1 {
+        background: gold;
+      }
+
+      .aside-2 {
+        background: hotpink;
+      }
+
+      @media all and (min-width: 600px) {
+        .aside {
+          flex: 1 0 0;
+        }
+      }
+
+      @media all and (min-width: 800px) {
+        .main {
+          flex: 3 0px;
+        }
+        .aside-1 {
+          order: 1;
+        }
+        .main {
+          order: 2;
+        }
+        .aside-2 {
+          order: 3;
+        }
+        .footer {
+          order: 4;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="explanation">
+      <h1>Flexbox</h1>
+      <h2>Background</h2>
+      <p>
+        El módulo Flexbox Layout tiene como objetivo proporcionar una forma más
+        eficiente de diseñar, alinear y distribuir el espacio entre los
+        elementos de un contenedor, incluso cuando su tamaño es desconocido y/o
+        dinámico (de ahí la palabra "flex").
+      </p>
+      <p>
+        La idea principal detrás del diseño flexible es dar al contenedor la
+        capacidad de alterar la anchura/altura de sus elementos (y el orden)
+        para llenar mejor el espacio disponible (sobre todo para adaptarse a
+        todo tipo de dispositivos de visualización y tamaños de pantalla). Un
+        contenedor flexible expande los elementos para llenar el espacio libre
+        disponible o los encoge para evitar el desbordamiento.
+      </p>
+      <p>
+        Lo más importante es que el diseño de flexbox es agnóstico en cuanto a
+        la dirección, a diferencia de los diseños normales (bloque, que se basa
+        en la verticalidad, e inline, que se basa en la horizontalidad).
+        Mientras que estos funcionan bien para las páginas, carecen de
+        flexibilidad (sin juego de palabras) para soportar aplicaciones grandes
+        o complejas (especialmente cuando se trata de cambiar la orientación,
+        redimensionar, estirar, encoger, etc.).
+      </p>
+      <p>
+        Nota: El diseño Flexbox es más apropiado para los componentes de una
+        aplicación, y los diseños a pequeña escala, mientras que el diseño Grid
+        está pensado para diseños a mayor escala.
+      </p>
+      <h2>Bases y terminologia</h2>
+      <p>
+        Dado que flexbox es un módulo completo y no una sola propiedad, implica
+        un montón de cosas, incluyendo todo su conjunto de propiedades. Algunas
+        de ellas están destinadas a ser establecidas en el contenedor (elemento
+        padre, conocido como "contenedor flex") mientras que las otras están
+        destinadas a ser establecidas en los hijos (llamados "elementos flex").
+      </p>
+      <p>
+        Si la maquetación "normal" se basa en las direcciones de flujo en bloque
+        y en línea, la maquetación flexible se basa en las "direcciones de flujo
+        flexibles". Consulte esta figura de la especificación, en la que se
+        explica la idea principal de la maquetación flexible.
+      </p>
+      <img
+        src="../Section-02-CSS/flexbox-imgs/00-basic-terminology.svg"
+        alt="flexbox image"
+      />
+      <p>
+        Los elementos se dispondrán siguiendo el eje principal (desde el inicio
+        hasta el final) o el eje transversal (desde el inicio hasta el final).
+      </p>
+      <ul>
+        <li>
+          <p>Main Axis (Eje Principal)</p>
+          <p>
+            El eje principal de un contenedor flex es el eje principal a lo
+            largo del cual se disponen los elementos flex. Cuidado, no es
+            necesariamente horizontal; depende de la propiedad flex-dirección
+            (ver más abajo).
+          </p>
+        </li>
+        <li>
+          <p>Main Start (eje principal) - Main End (eje final)</p>
+          <p>
+            Los elementos flexibles se colocan dentro del contenedor empezando
+            por main-start y llegando a main-end.
+          </p>
+        </li>
+        <li>
+          <p>Main Size (tamaño principal)</p>
+          <p>
+            La anchura o la altura de un elemento flexible, cualquiera que sea
+            la dimensión principal, es el tamaño principal del elemento. La
+            propiedad de tamaño principal del elemento flexible es la propiedad
+            "anchura" o "altura", la que se encuentre en la dimensión principal.
+          </p>
+        </li>
+        <li>
+          <p>Cross Axis (Eje Transversal)</p>
+          <p>
+            El eje perpendicular al eje principal se llama eje transversal. Su
+            dirección depende de la dirección del eje principal.
+          </p>
+        </li>
+        <li>
+          <p>
+            Cross Start (inicio transversal) - Cross End (final transversal)
+          </p>
+          <p>
+            Las líneas flexibles se llenan de artículos y se colocan en el
+            contenedor empezando por el lado de inicio transversal del
+            contenedor flexible y yendo hacia el lado de final transversal.
+          </p>
+        </li>
+        <li>
+          <p>Cross Size (Tamaño transversal)</p>
+          <p>
+            La anchura o la altura de un elemento flexible, cualquiera que esté
+            en la dimensión transversal, es el tamaño transversal del elemento.
+            La propiedad de tamaño transversal es la que esté en la dimensión
+            transversal de 'anchura' o 'altura'.
+          </p>
+        </li>
+      </ul>
+
+      <h3>Propiedades para el elemento padre - (flex container)</h3>
+      <ul>
+        <li>
+          <p>display</p>
+          <p>
+            Define un contenedor flex; inline o block dependiendo del valor
+            dado. Habilita un contexto flex para todos sus hijos directos.
+          </p>
+          <p>
+            Tenga en cuenta que las columnas CSS no tienen efecto en un
+            contenedor flexible.
+          </p>
+        </li>
+        <li>
+          <p>flex-direction</p>
+          <p>
+            Esto establece el eje principal, definiendo así la dirección en la
+            que se colocan los elementos flex en el contenedor flex. Flexbox es
+            (aparte de la envoltura opcional) un concepto de diseño en una sola
+            dirección. Piensa que los elementos flex se colocan principalmente
+            en filas horizontales o en columnas verticales.
+          </p>
+          <div class="img-container">
+            <img
+              class="small-img"
+              src="../Section-02-CSS/flexbox-imgs/flex-direction.svg"
+              alt=""
+            />
+          </div>
+          <p>Properties</p>
+          <ul>
+            <li>
+              <p>row(default)</p>
+              <p>
+                Izquierda a derercha en ltr(left to right) - derecha a izquierda
+                en rtl(right to left)(Mundo Occidental)
+              </p>
+            </li>
+            <li>
+              <p>row-reverse</p>
+              <p>
+                Derecha a izquierda en rtl(right to left)(Mundo Occidental) -
+                Izquierda a derercha en ltr(left to right) -
+              </p>
+            </li>
+            <li>
+              <p>column</p>
+              <p>Arriba a abajo</p>
+            </li>
+            <li>
+              <p>column-reverse</p>
+              <p>Abajo a arriba</p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>flex-wrap</p>
+          <p>
+            Por defecto, los elementos de flexión tratarán de encajar en una
+            línea. Puedes cambiar esto y permitir que los elementos se envuelvan
+            como sea necesario con esta propiedad.
+          </p>
+          <p>Properties</p>
+          <ul>
+            <li>
+              <p>nowrap(default)</p>
+              <p>todos los elementos flexibles estarán en una línea</p>
+            </li>
+            <li>
+              <p>wrap</p>
+              <p>
+                los elementos flexibles se envolverán en varias líneas, de
+                arriba a abajo.
+              </p>
+            </li>
+            <li>
+              <p>wrap-reverse</p>
+              <p>
+                Los elementos flexibles se envolverán en varias líneas de abajo
+                a arriba.
+              </p>
+              <a href="https://css-tricks.com/almanac/properties/f/flex-wrap/"
+                >Ejemplo</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>flex-flow</p>
+          <p>
+            Se trata de una abreviatura de las propiedades flex-dirección y
+            flex-wrap, que juntas definen los ejes principal y transversal del
+            contenedor flexible. El valor por defecto es row nowrap.
+          </p>
+        </li>
+        <li>
+          <p>justify-content</p>
+          <p>
+            Define la alineación a lo largo del eje principal. Ayuda a
+            distribuir el espacio libre sobrante cuando todos los elementos
+            flexibles de una línea son inflexibles, o son flexibles pero han
+            alcanzado su tamaño máximo. También ejerce cierto control sobre la
+            alineación de los elementos cuando desbordan la línea.
+          </p>
+          <div class="img-container">
+            <img
+              class="small-img"
+              src="../Section-02-CSS/flexbox-imgs/justify-content.svg"
+              alt=""
+            />
+          </div>
+          <ul>
+            <li>
+              <p>flex-start</p>
+              <p>
+                los artículos se embalan hacia el inicio de la dirección de
+                flexión.
+              </p>
+            </li>
+            <li>
+              <p>flex-end</p>
+              <p>
+                los elementos se empaquetan hacia el final de la dirección de
+                flexión.
+              </p>
+            </li>
+            <li>
+              <p>start</p>
+              <p>
+                los elementos se empaquetan hacia el inicio de la dirección del
+                modo de escritura.
+              </p>
+            </li>
+            <li>
+              <p>end</p>
+              <p>
+                los elementos se empaquetan hacia el final de la dirección del
+                modo de escritura.
+              </p>
+            </li>
+            <li>
+              <p>left</p>
+              <p>
+                los elementos se empaquetan hacia el borde izquierdo del
+                contenedor, a menos que no tenga sentido con la dirección de
+                flexión, entonces se comporta como el inicio.
+              </p>
+            </li>
+            <li>
+              <p>right</p>
+              <p>
+                los elementos se empaquetan hacia el borde derecho del
+                contenedor, a menos que no tenga sentido con la dirección de
+                flexión, entonces se comporta como el final.
+              </p>
+            </li>
+            <li>
+              <p>center</p>
+              <p>los elementos están centrados a lo largo de la línea</p>
+            </li>
+            <li>
+              <p>space-between</p>
+              <p>
+                los elementos se distribuyen uniformemente en la línea; el
+                primer elemento se encuentra en la línea inicial, el último en
+                la línea final
+              </p>
+            </li>
+            <li>
+              <p>space-around</p>
+              <p>
+                los elementos están distribuidos uniformemente en la línea con
+                el mismo espacio alrededor de ellos. Tenga en cuenta que
+                visualmente los espacios no son iguales, ya que todos los
+                elementos tienen el mismo espacio a ambos lados. El primer
+                elemento tendrá una unidad de espacio contra el borde del
+                contenedor, pero dos unidades de espacio entre el siguiente
+                elemento porque ese siguiente elemento tiene su propio espacio
+                que se aplica.
+              </p>
+            </li>
+            <li>
+              <p>space-evenly</p>
+              <p>
+                Los elementos se distribuyen de manera que el espacio entre dos
+                elementos cualesquiera (y el espacio hacia los bordes) sea
+                igual.
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>align-items</p>
+          <p>
+            Define el comportamiento por defecto de la disposición de los
+            elementos flex a lo largo del eje transversal en la línea actual.
+            Piensa en ello como la versión de justificar el contenido para el
+            eje transversal (perpendicular al eje principal).
+          </p>
+          <div class="img-container">
+            <img
+              class="small-img"
+              src="../Section-02-CSS/flexbox-imgs/align-items.svg"
+              alt=""
+            />
+          </div>
+          <ul>
+            <li>
+              <p>stretch(default)</p>
+              <p>
+                estirar para llenar el contenedor (sigue respetando la anchura
+                mínima/máxima)
+              </p>
+            </li>
+            <li>
+              <p>flex-start / start / self-start</p>
+              <p>
+                los elementos se colocan al principio del eje transversal. La
+                diferencia entre estos es sutil, y se trata de respetar las
+                reglas de dirección de flexión o las reglas de modo de
+                escritura.
+              </p>
+            </li>
+            <li>
+              <p>flex-end / end / self-end</p>
+              <p>
+                Los elementos se colocan al final del eje transversal. La
+                diferencia, de nuevo, es sutil y tiene que ver con el respeto a
+                las reglas de dirección flexible o a las reglas del modo de
+                escritura.
+              </p>
+            </li>
+            <li>
+              <p>center</p>
+              <p>los elementos se centran en el eje transversal</p>
+            </li>
+            <li>
+              <p>baseline</p>
+              <p>
+                los elementos se alinean de manera que sus líneas de base se
+                alinean
+              </p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>align-content</p>
+          <p>
+            Esto alinea las líneas de un contenedor flexible cuando hay espacio
+            extra en el eje transversal, de forma similar a como justify-content
+            alinea los elementos individuales dentro del eje principal.
+          </p>
+          <div class="img-container">
+            <img
+              class="small-img"
+              src="../Section-02-CSS/flexbox-imgs/align-content.svg"
+              alt=""
+            />
+          </div>
+          <ul>
+            <li>
+              <p>normal(default)</p>
+              <p>
+                los elementos se empaquetan en su posición por defecto como si
+                no se hubiera establecido ningún valor.
+              </p>
+            </li>
+            <li>
+              <p>flex-start / start</p>
+              <p>
+                Los elementos se empaquetan al principio del contenedor. El (más
+                soportado) flex-start honra la dirección de flexión mientras que
+                start honra la dirección del modo de escritura.
+              </p>
+            </li>
+            <li>
+              <p>flex-end / end</p>
+              <p>
+                elementos empaquetados al final del contenedor. El (más
+                soportado) flex-end honra la dirección flex mientras que end
+                honra la dirección del modo de escritura.
+              </p>
+            </li>
+            <li>
+              <p>center</p>
+              <p>elementos centrados en el contenedor</p>
+            </li>
+            <li>
+              <p>space-between</p>
+              <p>
+                elementos distribuidos uniformemente; la primera línea está al
+                principio del contenedor mientras que la última está al final
+              </p>
+            </li>
+            <li>
+              <p>space-evenly</p>
+              <p>
+                elementos distribuidos uniformemente con el mismo espacio
+                alrededor de cada línea
+              </p>
+            </li>
+            <li>
+              <p>space-around</p>
+              <p>
+                los elementos están distribuidos uniformemente con el mismo
+                espacio alrededor de ellos
+              </p>
+            </li>
+            <li>
+              <p>stretch</p>
+              <p>las líneas se estiran para ocupar el espacio restante</p>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <p>gap, row-gap, column-gap</p>
+          <p>
+            La propiedad gap controla explícitamente el espacio entre los
+            elementos flex. Aplica ese espacio sólo entre los elementos, no en
+            los bordes exteriores. No es exclusivamente para flexbox, la brecha
+            funciona en la rejilla y el diseño de varias columnas también.
+          </p>
+          <a href="https://css-tricks.com/almanac/properties/g/gap/">Ejemplo</a>
+          <div class="img-container">
+            <img
+              class="small-img"
+              src="../Section-02-CSS/flexbox-imgs/gap-1.svg"
+              alt=""
+            />
+          </div>
+        </li>
+      </ul>
+      <h3>Propiedades para los elementos hijos - (flex items)</h3>
+      <ul>
+        <li>
+          <p>order</p>
+          <p>
+            Por defecto, los elementos de flexión se presentan en el orden de
+            origen. Sin embargo, la propiedad order controla el orden en que
+            aparecen en el contenedor de flex.
+          </p>
+          <div class="img-container">
+            <img
+              class="small-img"
+              src="../Section-02-CSS/flexbox-imgs/order.svg"
+              alt=""
+            />
+          </div>
+        </li>
+        <li>
+          <p>flex-grow</p>
+          <p>
+            Define la capacidad de un elemento flexible para crecer si es
+            necesario. Acepta un valor sin unidades que sirve como proporción.
+            Determina la cantidad de espacio disponible dentro del contenedor
+            flexible que debe ocupar el elemento. Si todos los elementos tienen
+            flex-grow fijado en 1, el espacio restante en el contenedor se
+            distribuirá por igual entre todos los hijos. Si uno de los hijos
+            tiene un valor de 2, ese hijo ocupará el doble de espacio que
+            cualquiera de los otros (o lo intentará, al menos). Default (0) ,
+            numeros negativos invalidos.
+          </p>
+          <div class="img-container">
+            <img
+              class="small-img"
+              src="../Section-02-CSS/flexbox-imgs/flex-grow.svg"
+              alt=""
+            />
+          </div>
+        </li>
+        <li>
+          <p>flex-shrink</p>
+          <p>
+            Define la capacidad de un elemento flexible para encogerse si es
+            necesario. Default (0), numeros negativos invalidos.
+          </p>
+        </li>
+        <li>
+          <p>flex-basis</p>
+          <p>
+            Define el tamaño por defecto de un elemento antes de distribuir el
+            espacio restante. Puede ser una longitud (por ejemplo, 20%, 5rem,
+            etc.) o una palabra clave. La palabra clave auto significa "mira mi
+            propiedad de anchura o altura" (lo que hacía temporalmente la
+            palabra clave main-size hasta que fue desaprobada). La palabra clave
+            content significa "dimensionar en base al contenido del elemento" -
+            esta palabra clave no está bien soportada todavía, por lo que es
+            difícil de probar y más difícil de saber lo que hacen sus hermanos
+            max-content, min-content y fit-content.
+          </p>
+          <p>
+            Si se establece en 0, el espacio extra alrededor del contenido no se
+            tiene en cuenta. Si se establece en auto, el espacio extra se
+            distribuye en base a su valor flex-grow.
+          </p>
+        </li>
+        <li>
+          <p>flex</p>
+          <p>
+            Es la abreviatura de flex-grow, flex-shrink y flex-basis combinados.
+            El segundo y tercer parámetro (flex-shrink y flex-basis) son
+            opcionales. El valor por defecto es 0 1 auto, pero si lo establece
+            con un solo valor numérico, como flex: 5;, eso cambia la flex-basis
+            a 0%, así que es como establecer flex-grow: 5; flex-shrink: 1;
+            flex-basis: 0%;.
+          </p>
+          <p>
+            Se recomienda utilizar esta propiedad abreviada en lugar de
+            establecer las propiedades individuales. La abreviatura establece
+            los otros valores de forma inteligente.
+          </p>
+        </li>
+        <li>
+          <p>align-self</p>
+          <p>
+            Esto permite anular la alineación por defecto (o la especificada por
+            align-items) para elementos flexibles individuales. Consulte la
+            explicación de align-items para entender los valores disponibles.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Example - Simple  -->
+
+    <div id="example-0">
+      <div id="container0">
+        <h1>Item 1</h1>
+        <h1>Item 2</h1>
+        <h1>Item 3</h1>
+      </div>
+    </div>
+
+    <!-- Example with Flex Wrap -->
+    <section id="example-1">
+      <div id="container">
+        <div class="item"><h3>Item 1</h3></div>
+        <div class="item"><h3>Item 2</h3></div>
+        <div class="item"><h3>Item 3</h3></div>
+        <div class="item"><h3>Item 3</h3></div>
+        <div class="item"><h3>Item 3</h3></div>
+        <div class="item"><h3>Item 3</h3></div>
+        <div class="item"><h3>Item 3</h3></div>
+        <div class="item"><h3>Item 3</h3></div>
+        <div class="item"><h3>Item 3</h3></div>
+        <div class="item"><h3>Item 3</h3></div>
+        <div class="item"><h3>Item 3</h3></div>
+        <div class="item"><h3>Item 3</h3></div>
+        <div class="item"><h3>Item 3</h3></div>
+        <div class="item"><h3>Item 3</h3></div>
+        <div class="item"><h3>Item 3</h3></div>
+        <div class="item"><h3>Item 3</h3></div>
+      </div>
+    </section>
+    <!-- Example with a more complex layout -->
+    <section id="example-2">
+      <div class="wrapper">
+        <header class="header">Header</header>
+        <article class="main">
+          <p>
+            Pellentesque habitant morbi tristique senectus et netus et malesuada
+            fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
+            ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam
+            egestas semper. Aenean ultricies mi vitae est. Mauris placerat
+            eleifend leo.
+          </p>
+        </article>
+        <aside class="aside aside-1">Aside 1</aside>
+        <aside class="aside aside-2">Aside 2</aside>
+        <footer class="footer">Footer</footer>
+      </div>
+    </section>
+  </body>
+</html>

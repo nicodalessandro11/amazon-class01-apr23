@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Selectors</title>
+    <style>
+      /* CSS ROOT SELECTOR */
+      /* CSS ROOT SELECTOR */
+      /* La pseudoclase CSS :root coincide con el elemento raíz de un árbol que representa el documento. En HTML, :root representa el elemento <html> y es idéntico al selector html, salvo que su especificidad es mayor. */
+      /* :root puede ser útil para declarar variables CSS globales */
+
+      /* DECOMMENT AFTER CLASS */
+
+      /* :root {
+        --blue: blue;
+      } */
+
+      /* CSS UNIVERSAL SELECTOR
+      El selector universal, también conocido como comodín, selecciona todo, todos los elementos del documento.
+      You can use the universal selector to reset the browser's default padding and margin to zero at the top of the file before you add any other styles */
+
+      /* Puede utilizar el selector universal para restablecer el relleno y el margen por defecto del navegador a cero en la parte superior del archivo antes de añadir cualquier otro estilo: */
+      * {
+        background-color: #fafafa;
+        /* padding: 0;
+        margin: 0; */
+      }
+
+      /* CSS Type Selector */
+      /* El selector de tipo CSS selecciona todos los elementos HTML del tipo especificado. */
+      /* Para utilizarlo, mencione el nombre del elemento HTML. */
+      /* Por ejemplo, si quieres aplicar un estilo a cada uno de los H1 del documento HTML, debes especificar el elemento h1: */
+      h1 {
+        color: white;
+        text-decoration: underline;
+      }
+
+      /* CSS ID Selector */
+      /* El selector ID selecciona un elemento HTML basado en el valor de su atributo ID. */
+      /* Tenga en cuenta que el ID de un elemento debe ser único en un documento, lo que significa que sólo debe haber un elemento HTML con ese valor de ID dado. No puedes usar el mismo valor de ID en un elemento diferente a ese. */
+      /* Vale la pena mencionar que es mejor tratar de limitar el uso de este selector y optar por utilizar el selector de clase en su lugar. Aplicar estilos utilizando el selector ID no es lo ideal porque los estilos no son reutilizables. */
+      #welcome {
+        background-color: blue;
+      }
+
+      #about {
+        color: white;
+      }
+
+      /* CSS CLASS SELECTOR */
+      /* El selector de clase coincide y selecciona los elementos HTML en función del valor de su clase. En concreto, selecciona todos los elementos del documento con ese nombre de clase específico. */
+      /* Con el selector de clase, puedes seleccionar varios elementos a la vez y aplicarles el mismo estilo sin tener que copiar y pegar los mismos estilos para cada uno por separado. */
+      /* Las clases son reutilizables, lo que las convierte en una buena opción para practicar el desarrollo DRY. DRY es un principio de programación y es la abreviatura de "Don't Repeat Yourself" (no te repitas). Como su nombre indica, el objetivo es evitar escribir código repetitivo siempre que sea posible. */
+      .primary-heading {
+        color: green;
+      }
+
+      /* LESSON 2 - Wednesday January 11, 2023 */
+      /* .... */
+      /* .... */
+      /* .... */
+      /* .... */
+      /* START HERE */
+
+      /* GROUPING CSS SELECTORS */
+      /* Con el selector de agrupación, puede seleccionar y aplicar estilo a más de un elemento a la vez. */
+      /* Para utilizar el selector de agrupación, utilice una coma, , para agrupar y separar los diferentes elementos que desee seleccionar. */
+      #welcome,
+      #about {
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 25px;
+      }
+
+      /* Combinador descendiente */
+      /* Como su nombre indica, el combinador de descendientes selecciona sólo los descendientes del elemento especificado. */
+      /* Esencialmente, primero se menciona el elemento padre, se deja un espacio, y luego se menciona el descendiente del primer elemento, que es el elemento hijo del padre. El elemento hijo es un elemento dentro del elemento padre. */
+      #welcome p {
+        font-size: 16px;
+      }
+
+      /* Combinador de hijos directos */
+      /* El combinador hijo directo, también conocido como descendiente directo, selecciona sólo los hijos directos del elemento padre. */
+      /* Para utilizar el combinador de hijo directo, especifique el elemento padre y, a continuación, añada el carácter > seguido de los hijos directos del elemento padre que desee seleccionar. */
+      #descending-combinator > p {
+        color: red;
+      }
+
+      #descending-combinator > div > p {
+        color: orange;
+      }
+
+      /* Combinador General de hermanos */
+      /* El combinador general de hermanos selecciona a los hermanos. */
+      /* Puede especificar el primer elemento y un segundo que viene después del primero. */
+      /* Para utilizar el combinador general de hermanos, especifique el primer elemento y, a continuación, utilice el carácter ~ seguido del segundo elemento que debe ir después del primero. */
+      .sibling ~ p {
+        color: red;
+      }
+
+      /* Combinador de hermanos adyacentes */
+      /* El combinador de hermanos adyacentes es más específico que el combinador de hermanos general. */
+      /* Este selector sólo coincide con los hermanos inmediatos. Los hermanos inmediatos son los que vienen justo después del primer elemento. */
+      /* Para utilizar el combinador de hermanos adyacentes, especifique el primer elemento y, a continuación, añada el carácter + seguido del elemento que desee seleccionar y que esté inmediatamente después del primer elemento. */
+      .adjacent + p {
+        color: purple;
+      }
+
+      /* PSEUDO CLASESS EXPANDED  */
+
+      /* EXAMPLE WITH SIMPLE Heading Element */
+      .diego {
+        color: red;
+      }
+
+      .diego:hover {
+        color: black;
+      }
+
+      /* Pseudo Selectors for ANCHOR TAGS or BUTTONS OR ANY CLICKABLE CONTENT */
+
+      a {
+        display: block;
+      }
+
+      /* Hover   */
+      /* El selector :hover se aplica cuando el puntero del ratón pasa por encima de un elemento: */
+      a:hover {
+        color: blue;
+        text-decoration: line-through;
+      }
+
+      /* LINKS */
+      /* El selector :link aplica el estilo cuando el elemento no ha sido visitado antes: */
+      a:link {
+        color: green;
+      }
+
+      /* VISITED */
+      /* El selector :visited se aplica cuando el elemento ha sido visitado anteriormente en el navegador actual: */
+      /* a:visited {
+        color: red;
+      } */
+
+      /* FOCUS */
+      /* El selector :focus se aplica cuando un usuario ha hecho un tabulador sobre un elemento: */
+      a:focus {
+        color: red;
+      }
+
+      /* ACTIVE */
+      /* El selector :active se aplica cuando el elemento se selecciona después de hacer clic y después de mantener pulsado un botón del ratón: */
+      a:active {
+        color: aquamarine;
+      }
+
+      /* PSEUDO CLASES DE POCISION */
+      /* El selector de primer hijo, :first-child, selecciona el primer elemento, que será el primer hijo dentro del contenedor padre. */
+      .first-child-example p:first-child {
+        color: red;
+      }
+      /* El selector del último hijo, :last-child, selecciona el último elemento, que será el último hijo dentro del contenedor padre. */
+      .last-child-example p:last-child {
+        color: red;
+      }
+      /* El selector :nth-child() selecciona un elemento hijo dentro de un contenedor en función de su posición en un grupo de hermanos. */
+      /* Toma un número entero como argumento y selecciona un elemento en función del valor dado */
+      .nth-child-example p:nth-child(2) {
+        color: red;
+      }
+
+      .karen {
+        color: blue;
+      }
+
+      /* El selector :nth-child() es útil cuando se desea seleccionar elementos basados en una expresión, como la selección de elementos pares o impares */
+      .nth-child-example-2 p:nth-child(odd) {
+        color: red;
+      }
+      /* El selector :first-of-type, selecciona los elementos que son los primeros de ese tipo específico en el contenedor padre. */
+      .first-of-type p:first-of-type {
+        color: blue;
+      }
+
+      .first-of-type h1 {
+        color: black;
+      }
+
+      /* El selector de último tipo, :last-of-type, selecciona los elementos que son los últimos de ese tipo específico en el contenedor padre. */
+      .last-of-type p:last-of-type {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="explanation">
+      <div class="block-01">
+        <h1>CSS Selectors</h1>
+        <p>
+          Los selectores CSS se dirigen y seleccionan los elementos HTML a los
+          que se quiere dar estilo.
+        </p>
+        <p>
+          En concreto, los selectores CSS permiten seleccionar varios elementos
+          a la vez.
+        </p>
+        <p>
+          Son útiles cuando quieres aplicar los mismos estilos a más de un
+          elemento HTML, porque no te repetirás escribiendo las mismas líneas de
+          código para diferentes elementos.
+        </p>
+        <p>
+          Los selectores de CSS también son útiles cuando quieres hacer un
+          cambio: sólo tienes que hacer el cambio en un lugar, lo que te ahorra
+          mucho tiempo.
+        </p>
+      </div>
+      <div class="block-02">
+        <h2>Simple CSS Selectors</h2>
+        <p>
+          Los selectores le permiten seleccionar partes específicas de su
+          documento con fines de estilización.
+        </p>
+        <p>
+          Los selectores simples seleccionan directamente uno o varios
+          elementos:
+        </p>
+        <ul>
+          <li>Utilizando el selector universal, *.</li>
+          <li>Basado en el nombre/tipo del elemento.</li>
+          <li>Basado en el valor de la clase del elemento.</li>
+          <li>Basado en el valor del ID del elemento.</li>
+        </ul>
+        <p>
+          By learning how the most simple selectors work, you can understand how
+          to use the more complex ones.
+        </p>
+        <p>
+          The simple selectors will most often be the ones you will use the most
+          and the ones you will be the most familiar with if you have some
+          experience writing CSS code.
+        </p>
+      </div>
+    </section>
+
+    <section id="examples">
+      <div id="welcome">
+        <h2 class="primary-heading">Welcome</h2>
+        <h1>uexample</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam
+          ipsum quis, iste, libero sit enim tempora blanditiis doloribus error
+          excepturi non suscipit maiores nihil laboriosam! Maxime est alias
+          porro assumenda.
+        </p>
+      </div>
+      <hr />
+      <div id="about">
+        <h2>About</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde
+          nesciunt at nam consequatur sit corporis vitae ea eligendi eveniet, id
+          sunt. Recusandae, necessitatibus? Enim magnam dignissimos corrupti
+          maxime autem officia.
+        </p>
+      </div>
+      <hr />
+      <div id="descending-combinator">
+        <p>Example 001</p>
+        <div>
+          <p>Example 002</p>
+          <p>Example 002</p>
+        </div>
+      </div>
+      <hr />
+
+      <div id="sibling-combinator">
+        <div class="sibling">
+          <p>I am a paragpah inside a div</p>
+        </div>
+        <p>I am a paragpah inside a div</p>
+        <h3>I am a heading 003</h3>
+        <p>I am a paragpah inside a div</p>
+      </div>
+      <hr />
+
+      <div id="adjacent-sibling-combinator">
+        <div class="adjacent">
+          <p>I am paragraph inside a div 01</p>
+        </div>
+        <p>I am a paragraph outside a div</p>
+        <h3>I am a level three heading</h3>
+        <p>I am a paragraph outside a div</p>
+      </div>
+
+      <hr />
+      <!-- PSEUDO CLASESS EXPANDED -->
+
+      <!-- Pseudo Selectors -->
+
+      <h3 class="diego">DIEGO</h3>
+      <hr />
+      <div id="pseudo-classes-links">
+        <!-- LINKS -->
+        <a href="https://wutangclan.com/" target="_blank">WU TANG LAND</a>
+      </div>
+      <hr />
+      <div class="pseudo-classes-position">
+        <div class="first-child-example">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <hr />
+        <div class="last-child-example">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <hr />
+        <div class="nth-child-example">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p class="karen">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <hr />
+        <div class="nth-child-example-2">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <hr />
+        <div class="first-of-type">
+          <h1>First of Type</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+        <hr />
+        <div class="last-of-type">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

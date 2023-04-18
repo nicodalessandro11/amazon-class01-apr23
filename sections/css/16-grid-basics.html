@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Grid Basics</title>
+
+    <style>
+      body {
+        /* web safe fonts */
+        /* font-family: Arial, Helvetica, sans-serif; */
+        /* Google Font */
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+      }
+      /* Images */
+      .small-img {
+        width: 30%;
+      }
+      .img-container {
+        display: flex;
+        justify-content: center;
+      }
+
+      /* Grid Container Property css */
+      #grid-container p:nth-of-type(1) {
+        text-decoration: underline;
+      }
+
+      /* Simple grid using only track sizes to apply to both columns and rows */
+      .container-example-simple-grid {
+        /* grid props */
+        display: grid;
+        grid-template-columns: 40px 50px auto 50px 20px;
+        grid-template-rows: 25% 100px auto;
+        /* demo purposes */
+        outline: 1px solid red !important;
+        height: 20rem;
+      }
+
+      /* example with image */
+      .container-example-image {
+        display: grid;
+        grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
+        grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+        outline: 1px solid red !important;
+        height: 20rem;
+      }
+
+      /* example with more than one name in this specific scenario with a row element */
+      .container-example-more-than-one-name {
+        display: grid;
+        grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
+        grid-template-rows: [row1-start] 25% [row1-end row2-start] 25% [row2-end];
+        outline: 1px solid red !important;
+        height: 20rem;
+      }
+
+      .container-example-repeat-notation {
+        display: grid;
+        /* single namin convention */
+        /* grid-template-columns: [col-start] 1fr [col-start]1fr [col-start] 1fr[col-start] 1fr [col-start]1fr; */
+        /* SAME AS ABOVE */
+        grid-template-columns: repeat(5, 1fr);
+        /* multi naming convention
+        /* grid-template-columns: repeat(5, 1fr [col-start col-end]); */
+        grid-template-rows: [row1-start] 25% [row1-end row2-start] 25% [row2-end];
+        outline: 1px solid red !important;
+        height: 20rem;
+      }
+
+      .container-example-without-repeat-notation {
+        display: grid;
+        grid-template-columns: 20px [col-start] 20px [col-start] 20px [col-start];
+        grid-template-rows: [row1-start] 25% [row1-end row2-start] 25% [row2-end];
+        outline: 1px solid red !important;
+        height: 20rem;
+      }
+      .container-example-fractions {
+        display: grid;
+        grid-template-columns: 3fr 1fr 1fr;
+        grid-template-rows: [row1-start] 50% [row1-end] 50% [row2-end];
+        outline: 1px solid red !important;
+        height: 20rem;
+      }
+      .container-example-fractions-2 {
+        display: grid;
+        grid-template-columns: 1fr 50px 1fr 1fr;
+        grid-template-rows: [row1-start] 50% [row1-end] 50% [row2-end];
+        outline: 1px solid red !important;
+        height: 20rem;
+      }
+      /* GRID TEMPLATE AREAS */
+      .container-example-grid-template-areas {
+        outline: 1px solid red !important;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        /* gap: 25px; */
+        /* grid-template-rows: 1fr 1fr 1fr; */
+        grid-template-areas:
+          "header header header header"
+          "main main main sidebar"
+          "footer footer footer footer";
+      }
+      .item-a {
+        grid-area: header;
+        background-color: #f05d23;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      /* .item-a h1 {
+        margin: 0;
+      }
+      .item-b {
+        grid-area: main;
+        background-color: #e4e6c3;
+      }
+      .item-c {
+        grid-area: sidebar;
+        background-color: #0abe6d;
+      }
+      .item-d {
+        grid-area: footer;
+        background-color: #261c15;
+      } */
+
+      /* GRID TEMPLATE */
+      .container-example-grid-template {
+        outline: 1px solid red !important;
+        height: 20rem;
+        display: grid;
+        grid-template: [row1-start] 25% [row2-start] 25% / auto auto;
+      }
+
+      .container-example-grid-template-2 {
+        outline: 1px solid red !important;
+        height: 20rem;
+        display: grid;
+        grid-template: 25% 25% 25% / auto auto;
+      }
+
+      .container-example-grid-template-3 {
+        outline: 1px solid red !important;
+        height: 20rem;
+        display: grid;
+        grid-template: [row1-start] "header header header" 25% [row1-end] [row2-start] "footer footer footer" 25% [row2-end] / auto auto;
+      }
+      .container-example-grid-template-3-breakdown {
+        outline: 1px solid red !important;
+        height: 20rem;
+        display: grid;
+        grid-template-rows: [row1-start] 25% [row1-end row2-start] 25% [row2-end];
+        grid-template-columns: auto auto;
+        grid-template-areas: "header header header" "footer footer footer";
+      }
+
+      .container-example-gap-breakdown {
+        outline: 1px solid red !important;
+        height: 20rem;
+        display: grid;
+        grid-template-columns: 2fr 1fr 2fr;
+        grid-template-rows: 80px auto 80px;
+        /* column-gap: 10px;
+        row-gap: 20px; */
+        /* gap: 20px; */
+        gap: 20px 50px;
+        /* en caso de arriba primero(20px) es row y segundo es column(50px) */
+      }
+
+      /* GRID ITEMS */
+      .container-example-grid-items {
+        display: grid;
+        outline: 1px solid red;
+        height: 20rem;
+        grid-template-columns: 40px 50px auto 50px 40px;
+        grid-template-rows: 25% 100px auto;
+      }
+
+      /* .item-a {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        background-color: #f05d23;
+      } */
+
+      .container-example-grid-items-1 {
+        display: grid;
+        outline: 1px solid red;
+        height: 20rem;
+        grid-template-columns: [first] 40px [line2] 50px [line3] auto [col4-start] 50px [five] 40px [end];
+        grid-template-rows: [row1-start] 25% [row1-end] 100px [third-line] auto [last-line];
+      }
+      .item-b {
+        grid-column-start: 1;
+        grid-column-end: col4-start;
+        grid-row-start: 2;
+        grid-row-end: last-line;
+        background-color: black;
+      }
+      .item-c {
+        grid-column: 3 / span 1;
+        grid-row: row1-start / 4;
+        background-color: red;
+      }
+
+      /* WITH SPAN SYNTAX */
+      .item-b {
+        grid-column-start: 1;
+        grid-column-end: span col4-start;
+        grid-row-start: 2;
+        grid-row-end: span 2;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Explanation -->
+    <section id="explanation">
+      <h1>Grid</h1>
+      <h2>Background</h2>
+      <p>
+        CSS Grid, es un sistema de maquetación bidimensional basado en
+        cuadrículas que, comparado con cualquier sistema de maquetación web del
+        pasado, cambia por completo la forma en que diseñamos las interfaces de
+        usuario. Siempre se ha utilizado CSS para maquetar nuestras páginas web,
+        pero nunca se ha hecho un buen trabajo. Primero, usamos tablas, luego
+        flotadores, posicionamiento e inline-block, pero todos estos métodos
+        eran esencialmente hacks y dejaban fuera mucha funcionalidad importante
+        (centrado vertical, por ejemplo). Flexbox también es una gran
+        herramienta de maquetación, pero su flujo unidireccional tiene
+        diferentes casos de uso - ¡y en realidad funcionan muy bien juntos! Grid
+        es el primer módulo CSS creado específicamente para resolver los
+        problemas de diseño que todos hemos estado hackeando durante todo el
+        tiempo que hemos estado haciendo sitios web.
+      </p>
+
+      <h2>
+        Antes de entrar en codigo, es importante entender la terminología. Dado
+        que los términos que intervienen en este caso son un poco similares
+        desde el punto de vista conceptual, es fácil confundirlos entre sí si no
+        se memorizan primero sus significados definidos por la especificación
+        Grid. Pero no te preocupes, no son muchos.
+      </h2>
+
+      <div id="terminology">
+        <!-- Grid Container -->
+        <div>
+          <h2>Grid Container</h2>
+          <p>
+            El elemento sobre el que se aplica display: grid. Es el padre
+            directo de todos los elementos de la cuadrícula. En este ejemplo el
+            contenedor es el contenedor de la rejilla.
+          </p>
+          <div class="container">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+          </div>
+        </div>
+        <!-- Grid Item -->
+        <div>
+          <h2>Grid Item</h2>
+          <p>
+            Los hijos (es decir, los descendientes directos) del contenedor de
+            la rejilla. En este caso, los elementos de la rejilla son elementos
+            de la misma, pero los sub-elementos no lo son.
+          </p>
+          <div class="container">
+            <div class="item"></div>
+            <div class="item">
+              <p class="sub-item"></p>
+            </div>
+            <div class="item"></div>
+          </div>
+        </div>
+        <!-- Grid Line -->
+        <div>
+          <h2>Grid Line</h2>
+          <p>
+            Son las líneas divisorias que conforman la estructura de la
+            cuadrícula. Pueden ser verticales ("líneas de rejilla de columna") u
+            horizontales ("líneas de rejilla de fila") y residir a ambos lados
+            de una fila o columna. En este caso, la línea amarilla es un ejemplo
+            de línea de cuadrícula de columna.
+          </p>
+          <div class="img-container">
+            <img
+              class="small-img"
+              src="../Section-02-CSS/grid-imgs/terms-grid-line.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <!-- Grid Cell -->
+        <div>
+          <h2>Grid Cell</h2>
+          <p>
+            El espacio entre dos líneas de cuadrícula adyacentes de fila y dos
+            de columna. Es una sola "unidad" de la cuadrícula. Aquí está la
+            celda de la cuadrícula entre las líneas de cuadrícula de la fila 1 y
+            2, y las líneas de cuadrícula de la columna 2 y 3.
+          </p>
+          <div class="img-container">
+            <img
+              class="small-img"
+              src="../Section-02-CSS/grid-imgs/terms-grid-cell.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <!-- Grid Track -->
+        <div>
+          <h2>Grid Track</h2>
+          <p>
+            El espacio entre dos líneas adyacentes de la cuadrícula. Puedes
+            pensar en ellas como las columnas o filas de la cuadrícula. Aquí
+            está la pista de la cuadrícula entre las líneas de cuadrícula de la
+            segunda y tercera fila.
+          </p>
+          <div class="img-container">
+            <img
+              class="small-img"
+              src="../Section-02-CSS/grid-imgs/terms-grid-track.svg"
+              alt=""
+            />
+          </div>
+        </div>
+        <!-- Grid Area -->
+        <div>
+          <h2>Grid Area</h2>
+          <p>
+            El espacio total rodeado por cuatro líneas de cuadrícula. Un área de
+            cuadrícula puede estar compuesta por cualquier número de celdas de
+            cuadrícula. Aquí está el área de cuadrícula entre las líneas de
+            cuadrícula de fila 1 y 3, y las líneas de cuadrícula de columna 1 y
+            3.
+          </p>
+          <div class="img-container">
+            <img
+              class="small-img"
+              src="../Section-02-CSS/grid-imgs/terms-grid-area.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+
+      <div id="grid-container">
+        <h3>Propiedades para el elemento padre - (grid container)</h3>
+        <ul>
+          <!-- display -->
+          <li>
+            <p>display</p>
+            <p>
+              Define el elemento como contenedor de cuadrícula y establece un
+              nuevo contexto de formato de cuadrícula para su contenido.
+            </p>
+            <p>Properties</p>
+            <ul>
+              <li>grid - genera una cuadrícula a nivel de bloque</li>
+              <li>inline-grid - genera una cuadrícula a nivel de línea</li>
+            </ul>
+          </li>
+          <!-- grid-template-columns & grid-template-rows -->
+          <li>
+            <p>grid-template-columns & grid-template-rows</p>
+            <p>
+              Define las columnas y filas de la cuadrícula con una lista de
+              valores separados por espacios. Los valores representan el tamaño
+              de la pista, y el espacio entre ellos representa la línea de la
+              cuadrícula.
+            </p>
+            <ul>
+              <p>Valores</p>
+              <li>
+                <p>Tamaño de pista - track size</p>
+                <p>
+                  Puede ser una longitud, un porcentaje o una fracción del
+                  espacio libre de la cuadrícula utilizando la unidad fr. <br />
+                  ( fr = fracción.)
+                </p>
+              </li>
+              <li>
+                <p>Nombre de linea - line-name</p>
+                <p>un nombre arbitrario de su elección.</p>
+              </li>
+            </ul>
+            <!-- UNCOMMENT TO SHOW CODE EXAMPLES FROM BELOW -->
+            <div class="container-example-fractions-2"></div>
+            <!-- container-example-simple-grid -->
+            <p>
+              A las líneas de la cuadrícula se les asignan automáticamente
+              números positivos a partir de estas asignaciones (siendo -1 una
+              alternativa para la última fila). Miremos el ejemplo en CSS con la
+              clase container-example-simple-grid.
+            </p>
+            <!-- container-example-image -->
+            <p>
+              Pero puede elegir nombrar explícitamente las líneas. Tenga en
+              cuenta la sintaxis de los corchetes para los nombres de las
+              líneas. Miremos el ejemplo en CSS con la clase
+              container-example-image.
+            </p>
+            <!-- container-example-more-than-one-name -->
+            <p>
+              Tengamos en cuenta que una línea puede tener más de un nombre. Por
+              ejemplo, aquí la segunda línea tendrá dos nombres: row1-end y
+              row2-start. Miremos el ejemplo en CSS con la clase
+              container-example-more-than-one-name.
+            </p>
+            <!-- container-example-repeat-notation -->
+            <p>
+              Si tu definición contiene partes que se repiten, puede utilizar la
+              notación repeat() para agilizar las cosas. Miremos el ejemplo en
+              CSS con la clase container-example-repeat-notation.
+            </p>
+            <!-- container-example-without-repeat-notation -->
+            <p>
+              Este ejemplo con la clase container-example-repeat-notation es
+              igual al ejemplo con la clase
+              container-example-without-repeat-notation
+            </p>
+            <!-- container-example-fractions -->
+            <p>
+              La unidad fr le permite establecer el tamaño de una pista como una
+              fracción del espacio libre del contenedor de la cuadrícula. Por
+              ejemplo(container-example-fractions), esto establecerá cada
+              elemento a un tercio de la anchura del contenedor de la
+              cuadrícula. Miremos el ejemplo en CSS con la clase
+              container-example-fractions.
+            </p>
+            <!-- container-example-fractions-2 -->
+            <p>
+              El espacio libre se calcula después de cualquier elemento no
+              flexible. En este ejemplo, la cantidad total de espacio libre
+              disponible para las unidades fr no incluye los 50px.
+            </p>
+          </li>
+          <!-- grid-template-areas -->
+          <li>
+            <p>grid-template-areas</p>
+            <p>
+              Define una plantilla de cuadrícula haciendo referencia a los
+              nombres de las áreas de cuadrícula que se especifican con la
+              propiedad grid-area. La repetición del nombre de un área de
+              rejilla hace que el contenido abarque esas celdas. Un punto
+              significa una celda vacía. La propia sintaxis proporciona una
+              visualización de la estructura de la cuadrícula.
+            </p>
+            <ul>
+              <p>Valores</p>
+              <li>
+                <p>Nombre del area de la cuadricula - grid-area-name</p>
+                <p>
+                  Nombre de un área de la cuadrícula especificada con grid-area
+                </p>
+              </li>
+              <li>
+                <p>Ninguno - none</p>
+                <p>No se definen áreas de cuadrícula</p>
+              </li>
+            </ul>
+            <!-- UNCOMMENT TO SHOW CODE EXAMPLES FROM BELOW -->
+            <div class="container-example-grid-template-areas">
+              <div class="item-a"></div>
+              <div class="item-b"></div>
+              <div class="item-c"></div>
+              <div class="item-d"></div>
+            </div>
+            <!-- container-example-grid-template-areas  -->
+            <p>
+              Este ejemplo con la la clase container-example-grid-template-areas
+              creará una cuadrícula de cuatro columnas de ancho por tres filas
+              de alto. Toda la fila superior estará compuesta por el área de la
+              cabecera(header). La fila del medio estará compuesta por dos áreas
+              principales (main) y un área de barra lateral(sidebar). La última
+              fila es todo el pie de página(footer).
+            </p>
+            <p>
+              Cada fila de su declaración debe tener el mismo número de celdas.
+            </p>
+            <p>
+              Puede utilizar cualquier número de puntos adyacentes para declarar
+              una única celda vacía. Mientras los puntos no tengan espacios
+              entre ellos, representan una sola celda.
+            </p>
+            <p>
+              Tenga en cuenta que no está nombrando líneas con esta sintaxis,
+              sólo áreas. Cuando se utiliza esta sintaxis, las líneas de los
+              extremos de las áreas se nombran automáticamente. Si el nombre de
+              su área de la cuadrícula es foo, el nombre de la línea de la fila
+              inicial y de la línea de la columna inicial del área será
+              foo-inicio, y el nombre de su última línea de la fila y de la
+              última línea de la columna será foo-fin. Esto significa que
+              algunas líneas pueden tener varios nombres, como la línea del
+              extremo izquierdo en el ejemplo anterior, que tendrá tres nombres:
+              encabezado-inicio, principal-inicio y pie-inicio.
+            </p>
+          </li>
+          <!-- grid-template -->
+          <li>
+            <p>grid-template</p>
+            <p>
+              Una forma de abreviar la configuración de las filas de la
+              plantilla de la cuadrícula(grid-template-rows), las columnas de la
+              plantilla de la cuadrícula(grid-template-columns) y las áreas de
+              la plantilla(grid-template-area) de la cuadrícula en una sola
+              declaración.
+            </p>
+            <ul>
+              <p>Valores</p>
+              <li>
+                <p>Ninguno - none</p>
+                <p>Establece las tres propiedades a sus valores iniciales</p>
+              </li>
+              <li>
+                <p>grid-template-rows / grid-template-columns</p>
+                <p>
+                  Establece los valores especificados de grid-template-columns y
+                  grid-template-rows, respectivamente, y establece el valor de
+                  grid-template-areas como ninguno
+                </p>
+              </li>
+            </ul>
+            <!-- UNCOMMENT TO SHOW CODE EXAMPLES FROM BELOW -->
+            <h1>Gap example here</h1>
+            <div class="container-example-gap-breakdown"></div>
+          </li>
+          <!-- column-gap row-gap grid-column-gap grid-row-gap -->
+          <li>
+            <p>column-gap row-gap grid-column-gap grid-row-gap</p>
+            <p>
+              Especifica el tamaño de las líneas de la cuadrícula. Puede pensar
+              en ello como si estableciera la anchura de los canalones entre las
+              columnas/filas.
+            </p>
+            <ul>
+              <p>Valores</p>
+              <li>
+                <p>Tamaño de linea - line-size</p>
+                <p>Valor de la longitud</p>
+              </li>
+            </ul>
+            <p>
+              Miremos el ejemplo con la clase container-example-gap-breakdown
+            </p>
+            <div class="container-example-gap-breakdown"></div>
+          </li>
+        </ul>
+      </div>
+      <div id="grid-items">
+        <h3>Propiedades para los elemento hijos - (grid items)</h3>
+        <ul>
+          <li>
+            <p>grid-column-start grid-column-end grid-row-start grid-row-end</p>
+            <p>
+              Determina la ubicación de un elemento de la cuadrícula haciendo
+              referencia a líneas de cuadrícula específicas.
+              grid-column-start/grid-row-start es la línea donde comienza el
+              elemento, y grid-column-end/grid-row-end es la línea donde termina
+              el elemento.
+            </p>
+            <p>
+              Si no se declara un final de columna/fin de fila de la cuadrícula,
+              el elemento abarcará 1 pista por defecto.
+            </p>
+            <p>
+              Los elementos pueden superponerse entre sí. Puede utilizar el
+              índice z para controlar su orden de apilamiento.
+            </p>
+            <ul>
+              <p>values</p>
+              <li>
+                <p>Linea - line</p>
+                <p>
+                  Puede ser un número para referirse a una línea de cuadrícula
+                  numerada, o un nombre para referirse a una línea de cuadrícula
+                  con nombre.
+                </p>
+              </li>
+              <li>
+                <p>Span - number - numero</p>
+                <p>
+                  El elemento abarcará el número de líneas de cuadrícula
+                  indicado.
+                </p>
+              </li>
+              <li>
+                <p>Span - name - nombre</p>
+                <p>
+                  El elemento se extenderá hasta llegar a la siguiente línea con
+                  el nombre indicado.
+                </p>
+              </li>
+              <li>
+                <p>auto</p>
+                <p>
+                  Indica la autocolocación, un tramo automático o un tramo por
+                  defecto de uno.
+                </p>
+              </li>
+            </ul>
+            <!-- UNCOMMENT TO SHOW CODE EXAMPLES FROM BELOW -->
+            <!-- container-example-grid-items -->
+            <h1>Grid Items Example - 1</h1>
+            <div class="container-example-grid-items">
+              <div class="item-a"></div>
+            </div>
+            <!-- container-example-grid-items-1 -->
+            <h1>Grid Items Example - 2</h1>
+            <div class="container-example-grid-items-1">
+              <div class="item-b"></div>
+            </div>
+          </li>
+          <li>
+            <p>grid-column grid-row</p>
+            <p>
+              Abreviatura de cuadrícula-columna-inicio(grid-column-start) +
+              cuadrícula-columna-final(grid-column-end), y
+              cuadrícula-fila-inicio(grid-row-start) +
+              cuadrícula-fila-final(grid-row-end), respectivamente.
+            </p>
+            <ul>
+              <li>start-lin / end-line</li>
+              <p>
+                Cada uno de ellos acepta los mismos valores que la versión
+                manuscrita, incluido el span
+              </p>
+            </ul>
+            <!-- container-example-grid-items-1 -->
+            <div class="container-example-grid-items-1">
+              <div class="item-b"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>
+3

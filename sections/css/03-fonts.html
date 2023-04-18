@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fonts</title>
+
+    <!-- Google Fonts - Roboto -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- inyecting external css file with google fonts declaration -->
+    <link rel="stylesheet" href="./css/fonts.css" />
+
+    <!-- Declaring a google font link here but using it via a class/id/typeSelector inside my fonts.css file which is an external file of this root project -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        color: black;
+        /* Web Safe Fonts */
+        /* font-family: Arial, Helvetica, sans-serif; */
+
+        /* Google Fonts */
+        font-family: "Roboto", Arial, sans-serif;
+        font-weight: 100;
+        /* font-style: italic; */
+      }
+
+      .primary-heading {
+        line-height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="welcome">
+      <h2 class="primary-heading">Welcome</h2>
+      <i>HELLO XAVI</i>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+        corrupti corporis vel, <span>WU TANG </span> animi est neque magnam.
+      </p>
+    </div>
+    <hr />
+    <div id="google-fonts">
+      <h1>External font File from fonts.css in local machine</h1>
+      <h2 class="external-css-font-file">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat
+        obcaecati quidem dolore tempore cumque, unde atque in facere est odit,
+        impedit quod fuga et, porro dolorum perferendis. Ipsa, consectetur
+        temporibus.
+      </h2>
+      <h2 class="external-google-font-declaration-with-link-inside-html">
+        Wu Tang Clan, is for the children - EXTERNALLL
+      </h2>
+    </div>
+
+    <hr />
+    <div class="example-specificity">
+      <div class="explanation-div">
+        <p class="hello">
+          Hello World, I love <span id="rock">Rockn Roll</span>
+        </p>
+      </div>
+    </div>
+    <hr />
+  </body>
+</html>

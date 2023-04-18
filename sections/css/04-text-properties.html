@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Using a font on css -->
+    <link rel="stylesheet" href="./css/fonts.css" />
+
+    <!-- Google Fonts declaration here and application on fonts.css file -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap"
+      rel="stylesheet"
+    />
+    <title>Text Properties</title>
+    <style>
+      body {
+        /* web safe fonts */
+        /* font-family: Arial, Helvetica, sans-serif; */
+        /* Google Font */
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        /* line-height: 24px; */
+      }
+
+      #welcome .example-1 {
+        text-align: left;
+
+        /* Font property */
+        font-weight: 400;
+        line-height: 24px;
+        font-size: 16px;
+
+        font-variant: small-caps;
+
+        /*  this properties above are  the same as: */
+      }
+      #welcome .example-2 {
+        font-style: normal;
+        text-align: right;
+        text-transform: lowercase;
+
+        /* text-decoration-line: underline;
+        text-decoration-color: blue;
+        text-decoration-style: wavy; */
+
+        /* shorthand */
+        /* Short version with just 2 props */
+        /* text-decoration: underline red; */
+        /* Long Version with all props */
+        text-decoration: red underline wavy;
+      }
+      #welcome .example-3 {
+        font-style: normal;
+        text-align: left;
+      }
+
+      #structured-font-props {
+        font-weight: bold;
+        line-height: 24px;
+        font-size: 16px;
+        font-style: italic;
+        text-align: right;
+        text-decoration: red underline wavy;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="welcome">
+      <h2 class="primary-heading">Welcome</h2>
+      <p class="example-1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+        corrupti corporis vel, labore doloribus non nobis animi est neque
+        magnam.
+      </p>
+      <p class="example-2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+        corrupti corporis vel, labore doloribus non nobis animi est neque
+        magnam.
+      </p>
+      <p class="example-3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+        corrupti corporis vel, labore doloribus non nobis animi est neque
+        magnam.
+      </p>
+      <p class="example-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+        corrupti corporis vel, labore doloribus non nobis animi est neque
+        magnam.
+      </p>
+    </div>
+
+    <!-- <div id="structured-font-props">
+      <h1>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia
+        incidunt tempora earum, repudiandae magni molestias inventore voluptas
+        deleniti ratione sequi debitis atque numquam quam. Ipsum reprehenderit
+        quisquam delectus ex consectetur.
+      </h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum recusandae
+        delectus repudiandae, obcaecati culpa ea iusto laboriosam vitae
+        praesentium unde ex nostrum soluta voluptate sequi ab nam architecto
+        quos. Suscipit!
+      </p>
+      <span
+        >Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi harum
+        ullam distinctio maxime dignissimos! Autem, harum cum nisi animi
+        quisquam fuga. Laborum corrupti cum veniam harum modi iste aliquid
+        reprehenderit.</span
+      >
+    </div>
+    <div id="about">
+      <h2>About</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        <span>Esse magnam odio velit sint cum! </span> Illo quaerat similique
+        aperiam veritatis alias!
+      </p>
+    </div> -->
+  </body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS VARIABLES</title>
+
+    <style>
+      /* USING THE TRADITIONAL EXAMPLE */
+      /* #example {
+        background-color: #1e90ff;
+        outline: 1px #1e90ff solid;
+      }
+
+      h2 {
+        border-bottom: 2px solid #1e90ff;
+      }
+
+      .container {
+        color: #1e90ff;
+        background-color: #ffffff;
+        padding: 15px;
+      }
+
+      button {
+        background-color: #ffffff;
+        color: #1e90ff;
+        border: 1px solid #1e90ff;
+        padding: 1.5rem;
+      } */
+
+      /* USING CSS VARIABLES  */
+      :root {
+        /* Colors */
+        --primaryColor: #1e90ff;
+        --secondaryColor: #33587d62;
+        /* Fonts Sizes */
+        --heading01: 44px;
+      }
+
+      #example {
+        background-color: var(--primaryColor);
+        outline: 1px var(--primaryColor) solid;
+      }
+      #example h1 {
+        font-size: var(--heading01);
+      }
+      h2 {
+        border-bottom: 2px solid var(--primaryColor);
+      }
+
+      .container {
+        color: var(--primaryColor);
+        background-color: #ffffff;
+        padding: 15px;
+      }
+
+      button {
+        background-color: #ffffff;
+        color: var(--primaryColor);
+        border: 1px solid var(--primaryColor);
+        padding: 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="explanation">
+      <h1>CSS Variables</h1>
+      <p>
+        La función var() se utiliza para insertar el valor de una variable CSS.
+      </p>
+      <p>
+        Las variables CSS tienen acceso al DOM, lo que significa que puedes
+        crear variables con alcance local o global, cambiar las variables con
+        JavaScript, y cambiar las variables basadas en consultas de medios.
+      </p>
+      <p>
+        Una buena forma de utilizar las variables CSS es cuando se trata de los
+        colores de tu diseño. En lugar de copiar y pegar los mismos colores una
+        y otra vez, puedes colocarlos en variables.
+      </p>
+      <h1>How var() works</h1>
+      <p>
+        En primer lugar: Las variables CSS pueden tener un alcance global o
+        local.
+      </p>
+      <p>
+        Las variables globales pueden ser accedidas/utilizadas a través de todo
+        el documento, mientras que las variables locales sólo pueden ser
+        utilizadas dentro del selector donde se declaran.
+      </p>
+      <p>
+        Para crear una variable con alcance global, declárela dentro del
+        selector :root. El selector :root coincide con el elemento raíz del
+        documento.
+      </p>
+      <p>
+        Para crear una variable con alcance local, declárela dentro del selector
+        que la va a utilizar.
+      </p>
+      <p>
+        Existe una convencion de nombre que se llama "BEM" que se basa en usar
+        una nomenclatura especial para generar componentes reusables y
+        escalables. <a href="https://getbem.com/">Get Bem</a>
+      </p>
+    </div>
+    <div id="example">
+      <h1>Example</h1>
+
+      <div class="container">
+        <h2>Lorem Ipsum</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper
+          diam at erat pulvinar, at pulvinar felis blandit.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper
+          diam at erat pulvinar, at pulvinar felis blandit.
+        </p>
+        <p>
+          <button>Yes</button>
+          <button>No</button>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

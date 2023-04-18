@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Queries</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: gray;
+        color: white;
+        text-align: center;
+        padding-top: 100px;
+      }
+
+      h1 {
+        display: none;
+      }
+
+      a {
+        color: white;
+      }
+      a:hover {
+        color: blue;
+      }
+
+      /* SmartPhones */
+
+      /* 1ra Manera */
+      @media only screen and (max-width: 550px) {
+      }
+      /* 2da Manera */
+      @media (min-width: 551px) and (max-width: 700px) {
+      }
+      /* 3ra Manera */
+      @media (min-width: 540px) {
+      }
+      @media (max-width: 540px) {
+      }
+
+      @media only screen and (max-width: 500px) {
+        body {
+          background: red;
+        }
+        #smartphone h1 {
+          display: block;
+        }
+      }
+
+      /* Tablet */
+      @media (min-width: 501px) and (max-width: 768px) {
+        body {
+          background: blue;
+        }
+        #tablet h1 {
+          display: block;
+        }
+
+        a:hover {
+          color: black;
+        }
+      }
+
+      /* wideScreen */
+      @media (min-width: 1201px) {
+        body {
+          background: orange;
+        }
+        #widescreen h1 {
+          display: block;
+        }
+        p {
+          color: black;
+        }
+      }
+
+      /* Landscape */
+      @media (max-height: 500px) {
+        body {
+          background: black;
+        }
+
+        #landscape h1 {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="widescreen">
+      <h1>Widescreen</h1>
+    </div>
+    <div id="normal">
+      <h1>Normal</h1>
+    </div>
+    <div id="tablet">
+      <h1>Tablet</h1>
+    </div>
+    <div id="smartphone">
+      <h1>Smartphone</h1>
+    </div>
+    <div id="landscape">
+      <h1>Landscape</h1>
+    </div>
+    <p>
+      CSS Media queries son una forma de orientar el navegador según ciertas
+      características, rasgos y preferencias del usuario, y luego aplicar
+      estilos o ejecutar otro código basado en esas cosas. Tal vez las consultas
+      de medios más comunes en el mundo son las que se dirigen a rangos
+      particulares de la ventana gráfica y aplican estilos personalizados, lo
+      que dio origen a la idea del diseño responsivo.
+    </p>
+
+    <p><strong>¿Realmente necesitas las CSS Media queries ?</strong></p>
+    <p>
+      Media queries son una poderosa herramienta en tu caja de herramientas CSS
+      con emocionantes gemas ocultas. Pero si acomodas tu diseño a todas las
+      situaciones posibles acabarás con un código base demasiado complejo de
+      mantener y, como todos sabemos, el CSS es como un cachorro de oso: bonito
+      e inofensivo, pero cuando crezca te comerá vivo.
+    </p>
+    <p>
+      Existe un libro bastante interesante que se llama
+      <strong>Accesibility for Everyone de <i>Laura Kalbag</i></strong> que
+      resume la accesibilidad en una linda analogia.
+    </p>
+    <p>
+      Un diseñador accesible crearía una puerta grande para que las personas en
+      silla de ruedas pudieran entrar, mientras que un diseñador universal
+      produciría una entrada en la que cabría cualquier persona
+      independientemente de sus capacidades.
+    </p>
+    <p>
+      Sé que hablar de diseño universal en la web es difícil y casi suena
+      utópico, pero piénsalo, hay alrededor de 150 navegadores diferentes,
+      alrededor de 50 combinaciones diferentes de preferencias de usuario, esto
+      significa que hay al menos 18 millones de casos posibles en los que tu
+      contenido puede ser mostrado.
+    </p>
+    <a href="https://css-tricks.com/a-complete-guide-to-css-media-queries/"
+      >CSS Media Queries</a
+    >
+  </body>
+</html>

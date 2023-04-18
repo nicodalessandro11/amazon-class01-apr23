@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyframes === Fotogramas</title>
+    <style>
+      /* Una manera  de animar tus propiedades es a través de las Keyframes en CSS. */
+
+      /* Diff entre transitions y keyframes?  */
+      /* A diferencia de las transitions, los keyframes no dependen de una accion del usuario para que la propiedad reaccione. Los keyframes ejecutan sin ningun tipo de accion por parte del usuario. */
+
+      /* Cada animación necesita ser definida con la regla @keyframes que luego es llamada con la propiedad animation, así: */
+      /* -SYNTAX- */
+
+      /* .element {
+        animation: pulse 5s infinite;
+      }
+      animation es la propiedad de animacion de css
+      pulse es el nombre que le damos
+      5s son los segundos que dura la animacion
+      infinite son las veces que se ejecuta esta animacion
+
+      @keyframes pulse {
+        0% {
+          background-color: #001f3f;
+        }
+        100% {
+          background-color: #ff4136;
+        }
+      } */
+
+      /* Cada regla @keyframes define lo que debe suceder en momentos específicos durante la animación. Por ejemplo, 0% es el comienzo de la animación y 100% es el final. 
+      
+      Estos keyframes clave pueden ser controlados por la propiedad de animación abreviada, o sus 8 subpropiedades, para dar más control sobre cómo deben ser manipulados esos keyframes clave. */
+
+      /* SUBPROPIEDADES */
+      /* animation-name: declara el nombre de la regla @keyframes a manipular.
+      https://developer.mozilla.org/en-US/docs/Web/CSS/animation-name
+
+      animation-duration: el tiempo que tarda una animación en completar un ciclo.
+      https://developer.mozilla.org/en-US/docs/Web/CSS/animation-duration
+
+      animation-timing-function: establece curvas de aceleración preestablecidas como ease o linear.
+      https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function
+
+      animation-delay: el tiempo entre la carga del elemento y el inicio de la secuencia de animación. Segundos (ejemplo: 1s) o milisegundos (ejemplo: 100ms)
+      https://developer.mozilla.org/en-US/docs/Web/CSS/animation-delay
+
+      animation-direction: establece la dirección de la animación después del ciclo. Su valor por defecto se restablece en cada ciclo. Establece si una animación debe reproducirse hacia adelante, hacia atrás o alternar entre la reproducción de la secuencia hacia adelante y hacia atrás
+      https://developer.mozilla.org/en-US/docs/Web/CSS/animation-direction
+
+      animation-iteration-count: el número de veces que se debe realizar la animación.
+      https://developer.mozilla.org/en-US/docs/Web/CSS/animation-iteration-count
+
+      animation-fill-mode: establece qué valores se aplican antes/después de la animación.
+      https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode
+      
+      animation-play-state: pausa/reproduce la animación. 
+      https://developer.mozilla.org/en-US/docs/Web/CSS/animation-play-state
+      */
+
+      /* Leer esto:
+      https://css-tricks.com/almanac/properties/a/animation/ */
+
+      /* lista de propiedades que se pueden animar:
+      https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties */
+      body {
+        background: #333;
+      }
+
+      .box {
+        background: white;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        /* Animation Properties */
+        animation-name: animate1;
+        animation-duration: 2s;
+        animation-timing-function: ease-in-out;
+        animation-delay: 1s;
+        animation-direction: alternate;
+        animation-fill-mode: both;
+        animation-play-state: running;
+        animation-iteration-count: 4;
+      }
+
+      .box2 {
+        background: white;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        /* Animation Shorthand */
+        animation: animate2 infinite ease-in-out 4s forwards alternate running;
+      }
+
+      .box3 {
+        background: white;
+        width: 200px;
+        height: 200px;
+        position: relative;
+        /* Animation Shorthand */
+        animation: animate3 5s ease-in-out forwards alternate running infinite
+          1s;
+      }
+
+      /* -------- */
+      /* Animation 1 */
+      /* -------- */
+      @keyframes animate1 {
+        from {
+          top: 0;
+        }
+        to {
+          top: 200px;
+          background: red;
+          width: 600px;
+        }
+      }
+
+      /* -------- */
+      /* Animation 2 */
+      /* -------- */
+      @keyframes animate2 {
+        0% {
+          left: 0px;
+          top: 0px;
+          background: white;
+          border-radius: 0 0 0 0;
+        }
+        25% {
+          left: 300px;
+          top: 0px;
+          background: red;
+          border-radius: 50% 0 0 0;
+        }
+        50% {
+          left: 300px;
+          top: 300px;
+          background: green;
+          border-radius: 50% 50% 0 0;
+        }
+        75% {
+          left: 0px;
+          top: 300px;
+          background: blue;
+          border-radius: 50% 50% 50% 0;
+        }
+        100% {
+          left: 0px;
+          top: 0px;
+          background: gray;
+          border-radius: 50% 50% 50% 50%;
+        }
+      }
+
+      /* -------- */
+      /* Animation 2 */
+      /* -------- */
+      @keyframes animate3 {
+        0%,
+        100% {
+          left: 0px;
+          top: 0px;
+          background: white;
+          border-radius: 0 0 0 0;
+        }
+        25% {
+          left: 300px;
+          top: 0px;
+          background: red;
+          border-radius: 50% 0 0 0;
+        }
+        50% {
+          left: 300px;
+          top: 300px;
+          background: green;
+          border-radius: 50% 50% 0 0;
+        }
+        75% {
+          left: 0px;
+          top: 300px;
+          background: blue;
+          border-radius: 50% 50% 50% 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="box"></div> -->
+    <!-- <div class="box2"></div> -->
+    <div class="box3"></div>
+  </body>
+</html>

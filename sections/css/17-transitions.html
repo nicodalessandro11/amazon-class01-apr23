@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transitions</title>
+    <style>
+      /* Una manera  de animar tus propiedades es a través de las Transiciones en CSS. */
+
+      /* Una transición se produce cuando una propiedad CSS cambia de un valor a otro durante un periodo de tiempo. */
+
+      /* EXISTEN cuatro propiedades DE transición en CSS: transition-property, transition-duration, transition-timing-function, transition-delay. */
+
+      /* Aunque podemos usar un abreviador de estas 4 que se llama transition */
+
+      /* .selector {
+        transition: property duration transition-timing-function delay;
+      } */
+
+      /* SUBROPIEDADES */
+      /* transition-property se refiere a la propiedad CSS que desea transicionar. Es mas facil usar el keyword "all" para apuntar a todas las propiedades dentro del selector*/
+      /* https://developer.mozilla.org/en-US/docs/Web/CSS/transition-property */
+
+      /* transition-duration se refiere a la duración de la transición. ¿Cuánto tiempo quieres que dure la transición? Este valor se escribe en segundos con el sufijo s (como 3s). Es necesario en la transición abreviada. */
+      /* https://developer.mozilla.org/en-US/docs/Web/CSS/transition-duration */
+
+      /* transition-timing-function se refiere a cómo se produce la transición. */
+      /* https://developer.mozilla.org/en-US/docs/Web/CSS/transition-timing-function */
+
+      /* transition-delay se refiere a cuánto tiempo quiere esperar antes de iniciar la transition. Este valor se escribe en segundos con el sufijo s (como 3s). transition-delay es opcional en el shortthand de la transición. */
+      /* https://developer.mozilla.org/en-US/docs/Web/CSS/transition-delay */
+
+      /* LEER ESTO = "https://css-tricks.com/almanac/properties/t/transition/" */
+
+      /* lista de propiedades que se pueden animar:
+      https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties */
+
+      body {
+        background: #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        /* transition: background 500ms ease-in-out 100ms; */
+      }
+
+      /* body:hover {
+        background: #c1bdbd;
+      } */
+
+      .box {
+        background: white;
+        width: 100px;
+        height: 100px;
+
+        /* Transition Properties */
+        /* transition-property: all;
+        transition-duration: 1s;
+        transition-timing-function: ease-in-out;
+        transition-delay: 200ms; */
+
+        /* Transition shorthand */
+        transition: all 1s ease-in-out 200ms;
+
+        /* Usando transiciones multiples */
+        /* Separar el elemento especifico con sus subPropiedades de transicion mediante una "," */
+        /* transition: background 1s ease-in-out 5s, width 500ms ease-in 2s; */
+      }
+      /* CUANDO TRABAJAMOS CON EL TRANSITION-DELAY EN EL SHORTHAND, PONEDLO SIEMPRE AL FINAL SI USPLAU */
+      .box:hover {
+        background: red;
+        border-radius: 50%;
+        /* height: 300px; */
+        width: 300px;
+        /* transition: all 1s ease-in-out 200ms; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

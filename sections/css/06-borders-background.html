@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Borders & Backgrounds</title>
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        font-size: 16px;
+      }
+
+      #box-1 {
+        /* extended */
+        /* background-color: blue; */
+
+        /* simplified */
+
+        background: #161fc6;
+        opacity: 1;
+        /* Extended */
+        /* border-width: 3px;
+        border-color: red;
+        border-style: solid; */
+
+        /* Simplified shorthand */
+        border: 2px red solid;
+
+        /* Border radius prop */
+        border-radius: 5px;
+        /* only present in CSS3, current one WUTANG */
+      }
+
+      #box-2 {
+        background: #e89baf;
+        color: black;
+        border-left: green 10px dashed;
+
+        border-top-left-radius: 30px;
+
+        border-bottom-right-radius: 10px;
+      }
+
+      #box-3 {
+        background: green;
+        color: white;
+
+        /* THINK OF THE CLOCK WHENEVER YOU SEE THIS SEQUENCE top, right, bottom, left */
+        /* 10= top-left
+        25= top-right
+        40=bottom-right
+        30=bottom-left */
+        /* border-radius: 10px 25px 40px 30px; */
+
+        /* X and Y Axis segmentation */
+        border-radius: 20px 50px;
+      }
+
+      #box-4 {
+        /* background-image: url("https://extrachill.com/wp-content/uploads/2021/06/red-hot-chili-peppers-logo-1024x776.jpeg");
+        background-size: cover; */
+        /* Never use repeat-x or repeat-y ecause is redundant with the value "repeat"  */
+        /* background-repeat: no-repeat;
+        background-position: center center;
+        height: 300px;
+        width: 100%; */
+
+        /* SImplified shorthand*/
+
+        background: url("https://extrachill.com/wp-content/uploads/2021/06/red-hot-chili-peppers-logo-1024x776.jpeg")
+          no-repeat center center/cover;
+        height: 400px;
+        opacity: 1;
+      }
+
+      /* Another img injection through css */
+      #box-5 {
+        background: url("https://extrachill.com/wp-content/uploads/2021/06/red-hot-chili-peppers-logo-1024x776.jpeg")
+          no-repeat center center;
+        background-attachment: fixed;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box-1">
+      <h3>Box One</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad,
+        similique inventore natus distinctio adipisci quas provident
+        consequuntur vitae. Eum rem, iusto cumque voluptatem aliquid nemo harum
+        ab fugit tempore.
+      </p>
+    </div>
+    <br />
+    <div id="box-2">
+      <h3>Box two</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad,
+        similique inventore natus distinctio adipisci quas provident
+        consequuntur vitae. Eum rem, iusto cumque voluptatem aliquid nemo harum
+        ab fugit tempore.
+      </p>
+    </div>
+    <div id="box-3">
+      <h3>Box three</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad,
+        similique inventore natus distinctio adipisci quas provident
+        consequuntur vitae. Eum rem, iusto cumque voluptatem aliquid nemo harum
+        ab fugit tempore.
+      </p>
+    </div>
+    <div id="box-4">
+      <h3>Box four</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad,
+        similique inventore natus distinctio adipisci quas provident
+        consequuntur vitae. Eum rem, iusto cumque voluptatem aliquid nemo harum
+        ab fugit tempore.
+      </p>
+    </div>
+    <div id="box-5">
+      <h3>Box five</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad,
+        similique inventore natus distinctio adipisci quas provident
+        consequuntur vitae. Eum rem, iusto cumque voluptatem aliquid nemo harum
+        ab fugit tempore.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad,
+        similique inventore natus distinctio adipisci quas provident
+        consequuntur vitae. Eum rem, iusto cumque voluptatem aliquid nemo harum
+        ab fugit tempore.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad,
+        similique inventore natus distinctio adipisci quas provident
+        consequuntur vitae. Eum rem, iusto cumque voluptatem aliquid nemo harum
+        ab fugit tempore.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad,
+        similique inventore natus distinctio adipisci quas provident
+        consequuntur vitae. Eum rem, iusto cumque voluptatem aliquid nemo harum
+        ab fugit tempore.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad,
+        similique inventore natus distinctio adipisci quas provident
+        consequuntur vitae. Eum rem, iusto cumque voluptatem aliquid nemo harum
+        ab fugit tempore.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad,
+        similique inventore natus distinctio adipisci quas provident
+        consequuntur vitae. Eum rem, iusto cumque voluptatem aliquid nemo harum
+        ab fugit tempore.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad,
+        similique inventore natus distinctio adipisci quas provident
+        consequuntur vitae. Eum rem, iusto cumque voluptatem aliquid nemo harum
+        ab fugit tempore.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad,
+        similique inventore natus distinctio adipisci quas provident
+        consequuntur vitae. Eum rem, iusto cumque voluptatem aliquid nemo harum
+        ab fugit tempore.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad,
+        similique inventore natus distinctio adipisci quas provident
+        consequuntur vitae. Eum rem, iusto cumque voluptatem aliquid nemo harum
+        ab fugit tempore.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad,
+        similique inventore natus distinctio adipisci quas provident
+        consequuntur vitae. Eum rem, iusto cumque voluptatem aliquid nemo harum
+        ab fugit tempore.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ad,
+        similique inventore natus distinctio adipisci quas provident
+        consequuntur vitae. Eum rem, iusto cumque voluptatem aliquid nemo harum
+        ab fugit tempore.
+      </p>
+    </div>
+  </body>
+</html>
