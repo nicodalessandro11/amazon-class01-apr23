@@ -93,7 +93,7 @@
       }
 
       #descending-combinator > div > p {
-        color: orange;
+        color: #36280d;
       }
 
       /* Combinador General de hermanos */
@@ -173,6 +173,7 @@
       /* Toma un número entero como argumento y selecciona un elemento en función del valor dado */
       .nth-child-example p:nth-child(2) {
         color: red;
+        font-size: 24px;
       }
 
       .karen {
@@ -182,6 +183,7 @@
       /* El selector :nth-child() es útil cuando se desea seleccionar elementos basados en una expresión, como la selección de elementos pares o impares */
       .nth-child-example-2 p:nth-child(odd) {
         color: red;
+        font-size: 24px;
       }
       /* El selector :first-of-type, selecciona los elementos que son los primeros de ese tipo específico en el contenedor padre. */
       .first-of-type p:first-of-type {
@@ -195,11 +197,26 @@
       /* El selector de último tipo, :last-of-type, selecciona los elementos que son los últimos de ese tipo específico en el contenedor padre. */
       .last-of-type p:last-of-type {
         color: green;
+        font-size: 40px;
+      }
+
+      .caja-container {
+        width: 100%;
+      }
+      .caja {
+        height: 50px;
+        /* border: 1px solid black; */
+      }
+      .caja-container .caja:nth-child(odd) {
+        background: yellow;
+      }
+      .caja-container .caja:nth-child(even) {
+        background: gray;
       }
     </style>
   </head>
   <body>
-    <section id="explanation">
+    <!-- <section id="explanation">
       <div class="block-01">
         <h1>CSS Selectors</h1>
         <p>
@@ -247,7 +264,7 @@
           experience writing CSS code.
         </p>
       </div>
-    </section>
+    </section> -->
 
     <section id="examples">
       <div id="welcome">
@@ -286,7 +303,7 @@
         <div class="sibling">
           <p>I am a paragpah inside a div</p>
         </div>
-        <p>I am a paragpah inside a div</p>
+        <p>sibling combinator - I am a paragpah inside a div</p>
         <h3>I am a heading 003</h3>
         <p>I am a paragpah inside a div</p>
       </div>
@@ -294,7 +311,7 @@
 
       <div id="adjacent-sibling-combinator">
         <div class="adjacent">
-          <p>I am paragraph inside a div 01</p>
+          <p>I am paragraph inside a div 01 - adjacent</p>
         </div>
         <p>I am a paragraph outside a div</p>
         <h3>I am a level three heading</h3>
@@ -315,24 +332,33 @@
       <hr />
       <div class="pseudo-classes-position">
         <div class="first-child-example">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>
+            FIRST CHILD EXAMPLE - Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit.
+          </p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
         </div>
+        <hr />
         <hr />
         <div class="last-child-example">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>
+            LAST CHILD Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </p>
         </div>
+        <hr />
         <hr />
         <div class="nth-child-example">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           <p class="karen">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. - NTH
+            CHILD
           </p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
         </div>
+        <hr />
         <hr />
         <div class="nth-child-example-2">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -342,9 +368,12 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
         </div>
         <hr />
+        <hr />
         <div class="first-of-type">
           <h1>First of Type</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <p>
+            FIRST - Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          </p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
@@ -358,6 +387,19 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
         </div>
+      </div>
+
+      <div class="caja-container">
+        <div class="caja"></div>
+        <div class="caja"></div>
+        <div class="caja"></div>
+        <div class="caja"></div>
+        <div class="caja"></div>
+        <div class="caja"></div>
+        <div class="caja"></div>
+        <div class="caja"></div>
+        <div class="caja"></div>
+        <div class="caja"></div>
       </div>
     </section>
   </body>

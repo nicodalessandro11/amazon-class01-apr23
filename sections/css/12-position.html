@@ -8,11 +8,21 @@
     <style>
       body {
         height: 4000px;
+        margin: 0;
       }
 
       .box {
         width: 100px;
         height: 100px;
+      }
+
+      #box-1 {
+        position: relative;
+        /* enter 50 in both */
+        top: 0px;
+        left: 10px;
+        /* z-index: -2; */
+        background: red;
       }
 
       .container {
@@ -21,19 +31,10 @@
         height: 500px;
         background: #333;
       }
-
-      #box-1 {
-        position: relative;
-        /* enter 50 in both */
-        top: 0px;
-        left: 0px;
-        z-index: -2;
-        background: red;
-      }
       #box-2 {
         position: absolute;
         /* enter 100 in both */
-        top: 50px;
+        bottom: 30px;
         left: 50px;
         background: yellow;
       }
@@ -44,9 +45,11 @@
         right: 0px;
         background: green;
       }
+
       #box-4 {
         position: fixed;
         background: blue;
+        width: 100%;
       }
       #box-5 {
         position: sticky;
@@ -55,15 +58,75 @@
         background: orange;
         z-index: -1;
       }
+
+      .class-example {
+        margin-top: 2rem;
+        position: relative;
+        width: 100%;
+        height: 500px;
+        background: rgb(13, 13, 193);
+      }
+      .class-example-box {
+        position: absolute;
+      }
+      .class-example-box img {
+        height: 150px;
+        width: 150px;
+      }
+      .one {
+        top: 10px;
+        left: 10px;
+      }
+      .two {
+        top: 10px;
+        right: 10px;
+      }
+      .three {
+        bottom: 10px;
+        right: 10px;
+      }
+      .four {
+        bottom: 0px;
+        left: 0px;
+      }
+
+      #box-inner {
+        position: relative;
+      }
+      #box-inner-child {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 10px;
+      }
     </style>
   </head>
   <body>
     <div id="box-4" class="box"></div>
     <div id="box-1" class="box"></div>
     <div class="container">
-      <div id="box-2" class="box"></div>
+      <div id="box-2" class="box">
+        <div id="box-inner" class="box">
+          <div id="box-inner-child" class="">inferior-derecha?</div>
+        </div>
+      </div>
       <div id="box-3" class="box"></div>
     </div>
-    <!-- <div id="box-5" class="box"></div> -->
+    <div id="box-5" class="box"></div>
+
+    <!-- <div class="class-example">
+      <div class="box class-example-box one">
+        <img src="assets/valentino.jpeg" alt="hell" />
+      </div>
+      <div class="box class-example-box two">
+        <img src="assets/valentino.jpeg" alt="hell" />
+      </div>
+      <div class="box class-example-box three">
+        <img src="assets/valentino.jpeg" alt="hell" />
+      </div>
+      <div class="box class-example-box four">
+        <img src="assets/valentino.jpeg" alt="hell" />
+      </div>
+    </div> -->
   </body>
 </html>

@@ -11,8 +11,8 @@
     />
     <title>Flexbox Basics</title>
     <style>
-      /* 
-        align-content: 
+      /*
+        align-content:
                         flex-start
                         flex-end
                         center
@@ -30,13 +30,13 @@
                     inherit;
         */
       /*
-        justify-content: 
+        justify-content:
                         flex-start
                         flex-end
                         center
                         space-between
                         space-around
-                        space-evenly 
+                        space-evenly
          */
 
       * {
@@ -66,16 +66,29 @@
 
       /* example 0 */
 
-      #container0 {
-        outline: 1px solid red !important;
+      #ejemplo-clase {
+        height: 400px;
+        width: 100%;
+        background: red;
+        display: flex;
+        /* Flex direction */
+        flex-direction: column;
+        /* Justify Content */
+        justify-content: start;
+        /* Justify Items */
+        justify-items: center;
+      }
+      #ejemplo-clase div:nth-child(1) {
+        background: blue;
+        width: 20%;
+      }
+      #ejemplo-clase div:nth-child(2) {
+        background: green;
+        width: 20%;
+      }
 
-        /* Image Properties */
-        /* background-image: url("https://www.bmi.com/cache/images/news/2021/Rawayana_770_433_70_s.jpg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        opacity: 1;
-        width: auto; */
+      #container0 {
+        border: 1px solid red !important;
 
         /* padding: 1rem; */
         height: 20rem;
@@ -84,10 +97,12 @@
         display: flex;
         /* NO FLEX DIRECTION === flex-row una vez tengamos accionado el property 'display:flex' */
         flex-direction: row;
-        justify-content: space-around;
-        /* align-items: flex-end; */
-        align-content: center;
-        gap: 20px;
+        justify-content: space-evenly;
+        /* align-items: end; */
+        /* align-content: center; */
+        /* row-gap: 0px; */
+        /* column-gap: 10px; */
+        gap: 80px;
       }
 
       #container0 h1 {
@@ -142,16 +157,16 @@
         outline: 1px solid red !important;
         display: flex;
         /* long version */
-        /* flex-wrap: wrap;
-        flex-direction: row; */
+        flex-wrap: wrap;
+        flex-direction: row;
         /* shorthand */
-        flex-flow: row wrap;
+        /* flex-flow: row wrap; */
 
         font-weight: bold;
         text-align: center;
       }
 
-      /* Aca coloquialmente el css esta parseandose como, hey mira todo lo que esta adentro de la clase wrapper y me le colocas estas propiedades mediante el selector universal :) 
+      /* Aca coloquialmente el css esta parseandose como, hey mira todo lo que esta adentro de la clase wrapper y me le colocas estas propiedades mediante el selector universal :)
 
       WU TANG */
       .wrapper > * {
@@ -251,10 +266,7 @@
         flexibles". Consulte esta figura de la especificación, en la que se
         explica la idea principal de la maquetación flexible.
       </p>
-      <img
-        src="../Section-02-CSS/flexbox-imgs/00-basic-terminology.svg"
-        alt="flexbox image"
-      />
+      <img src="flexbox-imgs/00-basic-terminology.svg" alt="flexbox image" />
       <p>
         Los elementos se dispondrán siguiendo el eje principal (desde el inicio
         hasta el final) o el eje transversal (desde el inicio hasta el final).
@@ -338,7 +350,7 @@
           <div class="img-container">
             <img
               class="small-img"
-              src="../Section-02-CSS/flexbox-imgs/flex-direction.svg"
+              src="flexbox-imgs/flex-direction.svg"
               alt=""
             />
           </div>
@@ -420,7 +432,7 @@
           <div class="img-container">
             <img
               class="small-img"
-              src="../Section-02-CSS/flexbox-imgs/justify-content.svg"
+              src="flexbox-imgs/justify-content.svg"
               alt=""
             />
           </div>
@@ -513,11 +525,7 @@
             eje transversal (perpendicular al eje principal).
           </p>
           <div class="img-container">
-            <img
-              class="small-img"
-              src="../Section-02-CSS/flexbox-imgs/align-items.svg"
-              alt=""
-            />
+            <img class="small-img" src="flexbox-imgs/align-items.svg" alt="" />
           </div>
           <ul>
             <li>
@@ -568,7 +576,7 @@
           <div class="img-container">
             <img
               class="small-img"
-              src="../Section-02-CSS/flexbox-imgs/align-content.svg"
+              src="flexbox-imgs/align-content.svg"
               alt=""
             />
           </div>
@@ -637,11 +645,7 @@
           </p>
           <a href="https://css-tricks.com/almanac/properties/g/gap/">Ejemplo</a>
           <div class="img-container">
-            <img
-              class="small-img"
-              src="../Section-02-CSS/flexbox-imgs/gap-1.svg"
-              alt=""
-            />
+            <img class="small-img" src="flexbox-imgs/gap-1.svg" alt="" />
           </div>
         </li>
       </ul>
@@ -655,11 +659,7 @@
             aparecen en el contenedor de flex.
           </p>
           <div class="img-container">
-            <img
-              class="small-img"
-              src="../Section-02-CSS/flexbox-imgs/order.svg"
-              alt=""
-            />
+            <img class="small-img" src="flexbox-imgs/order.svg" alt="" />
           </div>
         </li>
         <li>
@@ -676,11 +676,7 @@
             numeros negativos invalidos.
           </p>
           <div class="img-container">
-            <img
-              class="small-img"
-              src="../Section-02-CSS/flexbox-imgs/flex-grow.svg"
-              alt=""
-            />
+            <img class="small-img" src="flexbox-imgs/flex-grow.svg" alt="" />
           </div>
         </li>
         <li>
@@ -737,6 +733,12 @@
     </section>
 
     <!-- Example - Simple  -->
+
+    <!-- EJEMPLO CLASE -->
+    <div id="ejemplo-clase">
+      <div>hello</div>
+      <div>goodbye</div>
+    </div>
 
     <div id="example-0">
       <div id="container0">

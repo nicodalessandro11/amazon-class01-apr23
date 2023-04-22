@@ -18,17 +18,22 @@
     />
     <title>Text Properties</title>
     <style>
+      /* * {
+        background: red;
+      } */
+      /* * === " es iun selector universal para seleccionar TODO" */
+      /* body === "es un selector especifico que aounta a un elemento particular que viene siendo el body y afecta a todo adentro del body" */
       body {
         /* web safe fonts */
         /* font-family: Arial, Helvetica, sans-serif; */
         /* Google Font */
         font-family: "Roboto", sans-serif;
-        font-size: 18px;
+        font-size: 16px;
         /* line-height: 24px; */
       }
 
       #welcome .example-1 {
-        text-align: left;
+        text-align: center;
 
         /* Font property */
         font-weight: 400;
@@ -41,16 +46,17 @@
       }
       #welcome .example-2 {
         font-style: normal;
-        text-align: right;
-        text-transform: lowercase;
+        line-height: 2rem;
+        text-align: center;
+        text-transform: capitalize;
 
         /* text-decoration-line: underline;
-        text-decoration-color: blue;
-        text-decoration-style: wavy; */
+        text-decoration-color: rgb(255, 0, 0);
+        text-decoration-style: double; */
 
         /* shorthand */
         /* Short version with just 2 props */
-        /* text-decoration: underline red; */
+        /* text-decoration: red underline; */
         /* Long Version with all props */
         text-decoration: red underline wavy;
       }
@@ -67,6 +73,18 @@
         text-align: right;
         text-decoration: red underline wavy;
       }
+
+      .link-btn {
+        text-decoration: none;
+        background-color: blue;
+        color: white;
+        font-family: "Roboto", sans-serif;
+        font-size: 2.5em;
+        letter-spacing: 10px;
+        text-align: center;
+        padding: 1rem;
+        border-radius: 2em;
+      }
     </style>
   </head>
   <body>
@@ -78,11 +96,12 @@
         magnam.
       </p>
       <p class="example-2">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
+        lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
         corrupti corporis vel, labore doloribus non nobis animi est neque
         magnam.
       </p>
-      <p class="example-3">
+      <a class="link-btn" href="www.google.com">google</a>
+      <!-- <p class="example-3">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
         corrupti corporis vel, labore doloribus non nobis animi est neque
         magnam.
@@ -91,7 +110,7 @@
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
         corrupti corporis vel, labore doloribus non nobis animi est neque
         magnam.
-      </p>
+      </p> -->
     </div>
 
     <!-- <div id="structured-font-props">
