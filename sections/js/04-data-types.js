@@ -19,33 +19,39 @@
 
 // Numeros
 console.log(8);
-console.log(8.5);
+console.log(8.5555555555555);
 console.log(-2);
+
 // nan === not a number
 let miSuperCoolSomething = "Malaga";
 console.log(typeof miSuperCoolSomething);
 console.log(8 / miSuperCoolSomething);
 
-//Strings
-console.log("Wu Tang Clan is for the children");
+//Strings === CADENA DE TEXTO
+console.log(typeof "0");
+console.log(typeof 0);
 
 // Booleans
 console.log(true);
 console.log(false);
+
+let diegoBool = false;
+console.log(diegoBool);
 
 //null
 console.log(null);
 
 //undefined
 let diego = undefined;
+console.log(diego);
 //let diego = "";
 console.log(typeof diego);
 
 // DATOS NO PRIMITIVOS
 // / En JS tenemos estos 2 tipos de datos noPrimitivos:
 
-//     - Arrays - Arrays
-//     - Objects - Objetos
+//     - Arrays - Arrays === []
+//     - Objects - Objetos === {}
 //
 // Datos No Primitivos - Examples
 
