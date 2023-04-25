@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser Events</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gradient-to-r from-gray-100 to-blue-100">
+    <section class="py-2">
+      <div class="p-4">
+        <h1 class="text-center text-xl font-bold  cursor-pointer hover:text-blue-500">Que son eventos del browser?</h1>
+        <div class="m-4 flex justify-center">
+          <button class="ruben-example p-4 bg-blue-500 text-center">Scroll using js - smooth</button>
+        <a href="#alexisGS"><button class="p-4 bg-red-500 text-center">Scroll using ID element through a tag</button>
+        </a>
+        
+        </div>
+        <p>Une vento se refiere a una accion dentro del programa.</p>
+        <p>Vamos a enfocarnos en eventos en contexto al browswer.</p>
+        <p>
+          En esencia un evento es un indicador que te muestra ciertas acciones
+          han ocurrido para que el usuario responda o accione en base al evento
+          :)
+        </p>
+      </div>
+    </section>
+    <section class="py-2">
+      <div class="p-4">
+        <div class="py-2">
+          <h2 class="text-xl font-bold text-center">Mouse Events</h2>
+          <ul>
+            <li>click</li>
+            <li>dblclick</li>
+            <li>mousemove</li>
+            <li>mouseover</li>
+            <li>mousewheel</li>
+            <li>mouseout</li>
+            <li>mousedown</li>
+            <li>mouseup</li>
+          </ul>
+        </div>
+        <div class="py-2">
+          <h2 class="text-xl font-bold text-center">Touch Events</h2>
+          <ul>
+            <li>touchstart</li>
+            <li>touchmove</li>
+            <li>touchend</li>
+            <li>touchcancel</li>
+          </ul>
+        </div>
+        <div class="py-2">
+          <h2 class="text-xl font-bold text-center">Keyboard Events</h2>
+          <ul>
+            <li>keydown</li>
+            <li>keypress</li>
+            <li>keyup</li>
+          </ul>
+        </div>
+        <div class="py-2 font-bold">Form Events</h2>
+          <ul>
+            <li>focus</li>
+            <li>blur</li>
+            <li>change</li>
+            <li>submit</li>
+          </ul>
+        </div>
+        <div class="py-2">
+          <h2 class="text-xl font-bold text-center">Window Events</h2>
+          <ul>
+            <li>scroll</li>
+            <li>resize</li>
+            <li>hashchange</li>
+            <li>load</li>
+            <li>unload</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="py-2">
+      <div>
+          <h1 class="font-bold py-2">Event Handlers</h1>
+        <p>
+          Como hemos dicho anteriormente, monitoreamos eventos para que cuando
+          recibamos alguna notificacion de que un evento ha ocurrido, el programa
+          puede responder acordemente.
+        </p>
+        <p>
+          Esta accion en teoria funciona a base funciones que coloquialmente
+          llamamos como eventHandlers que tambien se refieren a eventListeners. Si
+          un evento ocurre y se invoca el eventHandler, podemos decir que el
+          evento queda registrado.
+        </p>
+
+        <div class="py-2">
+          <p class="font-bold">Agregemos un boton y agremosle un click handlerrr</p>
+          <button id="btn" class="font-heading px-5 py-3 w-auto uppercase text-white text-xs font-semibold  bg-gray-900 rounded-md">
+            Click Me
+          </button>
+          <p class="text-cursive">
+            Ejemplo: si tenemos un boton con un id de "btn", el eventHandler se
+            invoca con una alerta en el browser que le pasamos el textp "Button
+            has been clicked". Le estamos asignando una propiedad "onClick" a la
+            funcion que vendria siendo el eventHandler.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="py-22">
+      <h1 class="font-bold">Asignar Event Handlers</h1>
+      <p>
+        tenemos varias maneras de asingar eventHandlers a nuestros elementos de
+        html
+      </p>
+
+      <p>
+        En teoria la manera mas facil de agregarlos es inline como hemos visto
+        en el ejemplo anterior pero es el menos recomendado
+      </p>
+
+      <button class="font-heading px-5 py-3 w-auto uppercase text-white text-xs font-semibold  bg-gray-900 rounded-md" 
+      onclick="alert('Hello world!')">
+      Click Me 1
+    </button>
+
+
+      <button 
+      onClick="(() => alert('Hello World!'))()">
+      Click Me 2
+    </button>
+
+
+      <button class="font-heading px-5 py-3 w-auto uppercase text-white text-xs font-semibold  bg-gray-900 rounded-md" 
+      ONCLICK="(() => alert('Hello World!'))()">
+      Click Me 3</button>
+
+      <button class="font-heading px-5 py-3 w-auto uppercase text-white text-xs font-semibold  bg-gray-900 rounded-md" 
+      onclick="hello()">
+      Click Me 4 - using a function that lives in the script tag - SEGEMENTADO</button>
+
+      <p>
+        Tomen nota que no es comun encontrar atributos de eventos en HTML como
+        onClick, onChange o onSubmit porque los atributos de html no son case
+        sentitive. Basicamente es syntatisticamente correcto user "onclick",
+        "onClick" o "ONCLICK".
+      </p>
+
+      <div>
+          <h1 class="font-bold">Usando una funcion en un script tag</h1>
+
+
+          <button class="font-heading px-5 py-3 w-auto uppercase text-white text-xs font-semibold  bg-gray-900 rounded-md"
+          onclick="onClickHandler2()">
+          Click me - Using a function inside of script tag
+          </button>
+
+      </div>
+      <div>
+        <h1 class="font-bold">Usando un un evento directo</h1>
+
+
+        <button class="font-heading px-5 py-3 w-auto uppercase text-white text-xs font-semibold  bg-gray-900 rounded-md"
+        id="button2">
+        Click me - event hanlding
+      </button>
+
+
+      </div>
+      <div>
+        <h1 class="font-bold">Usando un eventListener</h1>
+        <button class="font-heading px-5 py-3 w-auto uppercase text-white text-xs font-semibold  bg-gray-900 rounded-md"
+        id="button3">
+        Click me - Arrow Function with event handling
+      </button>
+      </div>
+      <div>
+        <h1 class="font-bold">Usando un eventListener y le pasamos un parametro/argumento</h1>
+        <p>Es importante entender que la funcion que llamamos function(e) en nuestro codigo en JS, es lo que llamamos un callback, veremos esto luego.</p>
+        <p class="mb-8">La <strong>(e)</strong> en esa función es un objeto que hace referencia al evento en sí. Dentro de ese objeto tienes acceso a muchas propiedades y funciones útiles, como el botón o la tecla del ratón que se ha pulsado, o información sobre el objetivo del evento: el nodo del DOM sobre el que se ha hecho clic.</p>
+
+
+        <button class="font-heading px-5 py-3 w-auto uppercase text-white text-xs font-semibold  bg-gray-900 rounded-md"
+        id="button4">
+        Click me - Param in Events
+      </button>
+
+      </div>
+      <h1 class="font-bold">Añadiendo evenetListeners en cosas multiples </h1>
+      <p>Esto puede parecer un montón de código si estás adjuntando muchos eventListeners a muchos elementos. Hay algunas maneras de hacerlo de manera más eficiente. Hemos aprendido que podemos obtener una lista de nodos de todos los elementos que coinciden con un selector específico con querySelectorAll('selector'). Para añadir un listener a cada uno de ellos simplemente tenemos que iterar a través de toda la lista así:</p>
+    
+       <div class="px-20 py-2 mx-auto multiple" id="16"><div class="mx-auto p-4 bg-gray-900 rounded-md text-white uppercase cursor-pointer">Click Me 1</div></div>
+       <div class="px-20 py-2 mx-auto multiple" id="2"><div class="mx-auto p-4 bg-gray-900 rounded-md text-white uppercase cursor-pointer">Click Me 2</div></div>
+       <div class="px-20 py-2 mx-auto multiple" id="4"><div class="mx-auto p-4 bg-gray-900 rounded-md text-white uppercase cursor-pointer">Click Me 3</div></div>     
+       
+
+       <h1 class="font-bold text-xl">Short Version</h1>
+       
+       <div class="px-20 py-2 mx-auto" id="shortened"><div class="mx-auto p-4 bg-gray-900 rounded-md text-white uppercase">Click Me</div></div>
+
+       <div class="px-20 py-2 mx-auto">
+        <h1 class="font-bold">Double Click</h1>
+
+
+        <p class="font-bold mychange">I love Hip Hop</p>
+
+
+        <div id="doubleclick" class="mx-auto p-4 bg-gray-900 rounded-md text-white uppercase cursor-pointer">Click Me - doubleclick</div>
+      </div>
+
+      <div class="px-20 py-2 mx-auto">
+        <h1 class="font-bold">onKeyDown</h1>
+        <p class="font-bold mychange">Una función se activa cuando el usuario pulsa una tecla en el inputField</p>
+        <input type="text" class="keyDown-class">
+      </div>
+
+       
+
+       </div>
+
+       <div class="flex itmes-center justify-center p-8">
+        <button class="scroll-to-top p-4 bg-blue-600 text-center text-white">Click me to scroll to top</button>
+       </div>
+       <div class="flex itmes-center justify-center p-8">
+        <button id="alexisGS" class="p-4 bg-blue-600 text-center text-white">STATIC ELEMENT</button>
+       </div>
+
+
+    </div>
+    </section>
+
+    <script>
+      console.log("HELLO");
+
+      // funcion 
+      function hello() {
+        alert("JS IS really cool!")
+      }
+      let btn = document.querySelector("#btn")
+      btn.addEventListener("click", hello);
+
+      // Callback Function inside the method to execute itself.
+      //btn.addEventListener("click", () => {})
+
+
+      // COMMENTS BELOW 
+
+      // Agregando el evento directo desde una funcion arrow mediante un llamado onclick en html y pasandole el nombre de la funcion dentro.
+      const onClickHandler2 = () => {
+        alert("Evento desde una funcion arrow en html");
+      };
+
+      //Agregando el evento directo despues de llamar a la variabale "button" y le pasamos el evento directo llamando a una funcion alertando algo :) 
+      const button2 = document.querySelector("#button2")
+      function directEvent(){
+        alert("Evento Directo")
+      }
+      button2.onclick = directEvent
+
+      //Agregando un event listener para escuchar de una manera mas flexible lo que quieras que puedas manipular :) 
+      const button3 = document.querySelector("#button3")
+      const onClickHandler3 = () => {
+        alert("Usando Event Listeners - WU TANG");
+      };
+      //button3.addEventListener('click', () => alert("Usando Event Listener y usamos un callback :)"))
+      button3.addEventListener('click', onClickHandler3)
+
+
+      // WORKING WITH EVENTS & PARAMS
+       //VAMOS A PASARLE UN PARAMETRO?ARGUMENTO DENTRO DE NUESTRA FUNCION 
+      // De esta manera podemos acceder a mas informacion de la funcion
+
+      const button4 = document.querySelector("#button4");
+      button4.addEventListener("click", (e) => {
+        // el parametro dentro de esta callback, hace referencia al evento que esta asociado a la variable.
+        console.log(e);
+        // Tenemos "SUBPropiedades" dentro de las propiedades del evento como por ejemplo "target" === es el elemento asociado al evento, casualmente este elemento es el button con id button4.
+        console.log(e.target);
+
+        // Ejemplo cambiando la clase del background
+        //button4.classList.add("bg-red-500")
+        // Ejemplo con un toggle para alternar clases 
+        button4.classList.toggle("bg-red-500")
+      })
+
+      // Adding Multiple Events 
+      const divMultiple = document.querySelectorAll(".multiple")
+      console.log(divMultiple);
+      divMultiple.forEach((eachDiv) => {
+        eachDiv.addEventListener('click' , (paremetroDeEventListner) => {
+          console.log(paremetroDeEventListner);
+          console.log(`El ID de este div es ${eachDiv.id}`);
+          alert(`El ID de este div es ${eachDiv.id}`)
+        })
+      })
+
+      // Short Version 
+      const shortenedVersion = document.querySelector("#shortened").addEventListener("click", () => {
+        alert("Short Version - Click")
+      })
+
+      // DBL CLick Event
+      const functionChangeText = () => {
+        document.querySelector(".mychange").innerText = "I Love both hip hop & rock n roll"
+      }
+      const dblClick = document.querySelector('#doubleclick').addEventListener('mouseout', functionChangeText)
+
+      //keydown event
+      const keyDownFunction = document.querySelector(".keyDown-class").addEventListener("keyup" , () => alert("Has presionado hacia abajo esta tecla"))
+
+      // Window object para hacer scroll hacia el 0 
+      let scrollBtn = document.querySelector(".scroll-to-top");
+
+      const scrollMeAllTheWayUp = () => {
+        console.log(window);
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        })
+      }
+
+      scrollBtn.addEventListener("click", scrollMeAllTheWayUp)
+
+
+      // Scroll to specific element 
+      let ruben = document.querySelector(".ruben-example");
+
+      const scrollIntoView = () => {
+        let elementIwantToGoTo = document.querySelector(".scroll-to-top");
+        elementIwantToGoTo.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        })
+      }
+      ruben.addEventListener("click", scrollIntoView)
+
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Rick Sanchez",
+    "profession": "Mad Scientist and amazing grandfather"
+  },
+  {
+    "id": 2,
+    "name": "Morty Smith",
+    "profession": "Coming of age teenager and great grand-son"
+  },
+  {
+    "id": 3,
+    "name": "Summer Smith",
+    "profession": "Sassy teenager and great grand-daughter"
+  },
+  {
+    "id": 4,
+    "name": "Birdperson",
+    "profession": "Double Agent && married to tammy..."
+  }
+]
