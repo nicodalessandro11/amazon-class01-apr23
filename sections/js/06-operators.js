@@ -219,17 +219,28 @@ function miSuperCoolFunction(numero1, numero2, numero3) {
   return numero1 + numero2 + numero3;
 }
 
-const miSuperCoolFunction2 = (numero1, numero2, numero3) => {
-  return numero1 + numero2 + numero3;
-};
+console.log(miSuperCoolFunction(3, 4, 5));
+let ageOne = 33;
+let ageTwo = 33;
+let ageThree = 40;
+console.log(miSuperCoolFunction(ageOne, ageTwo, ageThree));
 
-console.log(miSuperCoolFunction(10, 5, 8));
-
-function addTwoNumbers(number1, number2) {
-  return number1 + number2;
+function simple() {
+  return 2 + 2 + 2;
 }
+console.log(simple());
+console.log(simple());
+console.log(simple());
 
-console.log(addTwoNumbers(4, 8));
+// const miSuperCoolFunction2 = (numero1, numero2, numero3) => {
+//   return numero1 + numero2 + numero3;
+// };
+
+// function addTwoNumbers(number1, number2) {
+//   return number1 + number2;
+// }
+
+//console.log(addTwoNumbers(4, 8));
 
 // CLASS EXCERCISES
 // Ejercicio 1:

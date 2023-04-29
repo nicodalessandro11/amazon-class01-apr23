@@ -29,7 +29,7 @@
 console.log("-  FOR LOOP:");
 console.log("------------------");
 // Variable que usaremos como numero para poder iterar dentro de nuestra "condicion"
-const forLoopExample = 10;
+const forLoopExample = 20;
 // loopeamos o bucleamos :) - desde i = 1 hasta 10 [i === index "buenas practicas"]
 for (let iterator = 1; iterator <= forLoopExample; iterator++) {
   console.log("Esto es un ejemplo sencillo de un bucle 'for'");

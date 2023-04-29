@@ -23,6 +23,7 @@
 //const number = prompt("Enter a number:    ");
 
 // Proceder a condicionar este numero dentro de la variabe "number"
+
 // if (number > 0) {
 //   console.log("Este numero es positivo");
 //   console.log(
@@ -51,7 +52,7 @@
 //   console.log("Este numero es negativo");
 //   console.log("Se cumple si el caso inicial NO es valido/positivo");
 // }
-// //Checking for 0 as well
+//Checking for 0 as well
 // if (number2 >= 0) {
 //   console.log("Este numero es positivo");
 //   console.log("Se cumple si el caso inicial es valido/positivo");
@@ -89,9 +90,9 @@
 // Ejemplo - using else if
 // Los seguratas!
 
-// const drinkingAge = parseInt(
-//   prompt("Hey do you want to buy alcohol? please show me your ID")
-// );
+const drinkingAge = parseInt(
+  prompt("Hey do you want to buy alcohol? please show me your ID")
+);
 
 // CONDITIONAL USING ELSE AT THE END
 // if (drinkingAge < 18) {
@@ -127,19 +128,44 @@
 // NESTED - CONDICIONALES ADINADOS
 // Podemos adinar condicionales dentro de condicionales si queremos :)
 
-// const number = parseInt(prompt("Enter a number"));
+//const number = parseInt(prompt("Enter a number"));
 
 // if (number >= 0) {
 //   if (number === 0) {
 //     console.log("the number is = to 0");
 //   } else if (number >= 1 && number <= 3) {
 //     console.log("the number is between 1 & 3");
-//   } else {
+//   } else if (number > 3) {
 //     console.log("the number is bigger than 3?");
 //   }
 // } else {
 //   console.log("The number entered is a negative number");
 // }
+
+const askUser = prompt(
+  "Tell me your country of origin and I will tell, you your continent :)"
+);
+
+if (askUser === "usa" || askUser === "argentina" || askUser === "colombia") {
+  console.log("You are from America");
+} else if (
+  askUser === "españa" ||
+  askUser === "italia" ||
+  askUser === "francia"
+) {
+  console.log("You are from Europe");
+} else if (
+  askUser === "japon" ||
+  askUser === "tailandia" ||
+  askUser === "china"
+) {
+  console.log("You are from Europe");
+} else {
+  console.log("I did not recognize your input :(");
+}
+// america = [usa,argentina,colombia]
+// europa = [españa,italia,francia]
+// asia = [japon, tailandia, china]
 
 // ------------------------------
 // REDUCIR UN POCO DE CODIGO
@@ -352,45 +378,45 @@ switch (switchExampleTwo) {
 // }
 
 // GEMMA APPROACH WITH CALC OF TOTAL OF TICKETS
-const ageThree = parseInt(prompt("Enter your ageThree: "));
+//const ageThree = parseInt(prompt("Enter your ageThree: "));
 let ticket = 10;
-if (ageThree <= 5) {
-  console.log("Ticket free");
-} else if (ageThree < 15) {
-  console.log(ticket * 0.8);
-} else if (ageThree <= 60) {
-  console.log(ticket);
-} else {
-  console.log(ticket * 0.6);
-}
+// if (ageThree <= 5) {
+//   console.log("Ticket free");
+// } else if (ageThree < 15) {
+//   console.log(ticket * 0.8);
+// } else if (ageThree <= 60) {
+//   console.log(ticket);
+// } else {
+//   console.log(ticket * 0.6);
+// }
 
 // Excercise 002
 // Vamos a crear un switch statement para loguear distintos resultados segun los prompts que entre el usuario. Primero le daremos la opción de entrar su name, que nos guardaremos en una variable. Después le permitiremos entrar una action, que también guardaremos en una variable. Nos encargaremos de esta action y, según lo que el usuario entre, haremos console log de alguna cosa u otra.
 
 // Si el usuario entra "greet", lo que vamos a loguear es "Hello, [name]!". Si el usuario entra "say bye", vamos a loguear "Bye bye, [name]!". Si el usuario entra "ask" loguearemos "How are you today, [name]?". Si entra "scream" vamos a loguear "AHHHHHHHH!!!!!!!". Si entra "rest" vamos a loguear "I'm signing off now.". En caso de que la action no sea ninguna de las anteriores, lo que loguearemos será: "I don't know how to do that yet, I'm just a little program :("
 
-const userName = prompt("What's your name?");
-const action = prompt("What type of action would you like to choose from:");
+//const userName = prompt("What's your name?");
+//const action = prompt("What type of action would you like to choose from:");
 
-switch (action) {
-  case "greet":
-    console.log(`Hello, ${userName}`);
-    break;
-  case "say bye":
-    console.log(`Bye bye, ${userName}`);
-    break;
-  case "ask":
-    console.log(`How are you today, ${userName}`);
-    break;
-  case "scream":
-    console.log(`AHHHHHHHHHHHHH!!!!!`);
-    break;
-  case "rest":
-    console.log(`I'm signing off now.`);
-    break;
-  default:
-    console.log(
-      "I don't know how to do that yet, I'm just a little program :("
-    );
-    break;
-}
+// switch (action) {
+//   case "greet":
+//     console.log(`Hello, ${userName}`);
+//     break;
+//   case "say bye":
+//     console.log(`Bye bye, ${userName}`);
+//     break;
+//   case "ask":
+//     console.log(`How are you today, ${userName}`);
+//     break;
+//   case "scream":
+//     console.log(`AHHHHHHHHHHHHH!!!!!`);
+//     break;
+//   case "rest":
+//     console.log(`I'm signing off now.`);
+//     break;
+//   default:
+//     console.log(
+//       "I don't know how to do that yet, I'm just a little program :("
+//     );
+//     break;
+// }

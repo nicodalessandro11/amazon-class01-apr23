@@ -15,6 +15,11 @@ let number = 6;
 var x;
 let y;
 
+console.log("-------");
+console.log("-------");
+console.log("-------");
+console.log("-------");
+
 // En este caso particular, hemos declarado las variables, que tiene nombre x & y. E esencia, estas variables estan vacias ya que no hemos alocalizado ningun tipo de dato dentro de la variable.
 // En este caso particular, hemos decalrado las variables, que tiene los nombres x&y.
 console.log(`The old value of this variable is: ${y}`);
@@ -107,6 +112,7 @@ console.log(rockGroup);
 
 // Ejemplo de reasignacion - NOT POSSIBLE
 //rockGroup = "The Doors";
+//.console.log(rockGroup);
 
 // Ejemplo de declaracion inicial vacia - NOT POSSIBLE
 //const bestHipHopGroup =
