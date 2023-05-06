@@ -79,6 +79,7 @@ const mixedArrayTwo = [
 //function sum() {}
 const sum = (arrayArgument) => {
   let mixedSum = 0;
+
   for (let i = 0; i < arrayArgument.length; i++) {
     if (typeof arrayArgument[i] === "string") {
       let str;
@@ -92,8 +93,10 @@ const sum = (arrayArgument) => {
       mixedSum += arrayArgument[i];
     }
   }
+
   return mixedSum;
 };
+
 //alert(sum(mixedArray));
 console.log("Sum of any mixed array");
 console.log(sum(mixedArray));
@@ -128,10 +131,12 @@ for (let i = 0; i < data.length; i++) {
 console.log("------------------");
 console.log("-  WHILE LOOP:");
 // JS - WHILE LOOP
+
 // Syntax;
 // while (condition) {
 //   // body del bucle while
 // }
+
 //Breakdown:
 // 1. Un bucle while evalúa la condición dentro del paréntesis().
 // 2. Si la condición es verdadera, se ejecuta el código dentro del body del bucle while.
@@ -207,10 +212,10 @@ console.log("------------------");
 console.log("-  DO WHILE LOOP:");
 
 // JS - DO WHILE LOOP
-// SYNTAX
-// do {
-//   //     // body del bucle do-while
-// } while (condition);
+SYNTAX;
+do {
+  //     // body del bucle do-while
+} while (condition);
 //BREAKDOWN
 // 1. Primero se ejecuta el cuerpo del bucle. Luego se evalúa la condición.
 // 2. Si la condición se evalúa como verdadera, el cuerpo del bucle dentro de la sentencia do se ejecuta de nuevo.
