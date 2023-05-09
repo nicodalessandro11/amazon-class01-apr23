@@ -35,9 +35,9 @@ console.log("DOM Manipulation Intro Class:");
 // uncomment
 // console.log(document);
 // console.log(document.title);
+// console.log(document.head);
 // console.log(document.URL);
 // console.log(document.doctype);
-// console.log(document.head);
 // console.log(document.body);
 
 // Cómo seleccionar elementos en el DOM
@@ -46,7 +46,7 @@ console.log("DOM Manipulation Intro Class:");
 //Una vez que hayas seleccionado un elemento, puede añadir estilos al elemento, manipular sus atributos y recorrer los elementos padre e hijo.
 
 // 1. getElementById Method
-// // La forma más común de acceder a un elemento HTML es utilizar el id del elemento.
+// La forma más común de acceder a un elemento HTML es utilizar el id del elemento.
 //El id distingue entre mayúsculas y minúsculas. Por ejemplo, el "dom-manipulation" y el "Dom-manipulation" son ids totalmente diferentes.
 
 // uncomment
@@ -57,25 +57,30 @@ console.log("DOM Manipulation Intro Class:");
 // Por ejemplo, nuestra página HTML de abajo contiene 5 elementos con class="wuTang".
 
 // uncomment
-//console.log(document.getElementsByClassName("wuTang"));
-//console.log(document.getElementsByClassName("wuTang")[3]);
+// console.log(document.getElementsByClassName("wuTang"));
+// console.log(document.getElementsByClassName("wuTang")[3]);
+// console.log(document.getElementsByClassName("rock"));
 
 // 3. getElementsByTagName() Method
 // Este método acepta un nombre de etiqueta y devuelve todos los elementos del nombre de etiqueta especificado en el orden en que aparecen en el documento.
 
 //console.log(document.getElementsByTagName("h5"));
-//console.log(document.getElementsByTagName("h5")[4]);
+//console.log(document.getElementsByTagName("h5")[4].innerHTML);
 
 // 4. querySelector() Method
 // Devuelve el primer valor que coincida con el selector que se le da. Este método puede aceptar todos los selectores de estilo CSS, lo que le permite seleccionar por etiqueta, clase o ID.
 
 // uncomment
 // console.log(document.querySelector("#query-selector"));
-// console.log(document.querySelector(".hipHop"));
+// console.log(document.querySelector(".wuTang"));
 // console.log(document.querySelector(".myLove"));
 // console.log(document.querySelector("h5"));
 // console.log(document.querySelector("#query-selector .hipHop .myLove"));
-// console.log(document.querySelector("#query-selector .myLove"));
+// console.log(document.querySelector("#query-selector .hipHop"));
+// console.log(document.querySelector("#query-selector .hipHop"));
+// console.log(document.querySelector(".myLove"));
+// console.log(document.querySelector("#classname-example"));
+// console.log(document.getElementById("classname-example"));
 
 // 5.querySelectorAll() Method
 // Funciona de forma similar a la anterior, que devuelve una colección de listas de nodos con todos los elementos coincidentes.
@@ -107,7 +112,6 @@ console.log("DOM Manipulation Intro Class:");
 // - previousElementSibling
 
 // Last Element Child
-
 // uncomment
 // console.log(document.querySelector("#traverse-document").lastElementChild);
 

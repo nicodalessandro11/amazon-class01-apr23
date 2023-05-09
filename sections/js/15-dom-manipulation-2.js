@@ -1,5 +1,4 @@
 console.log("DOM Manipulation Class Continued");
-console.log(document);
 
 // Cómo manipular elementos en el DOM
 // En esta sección vamos a ver:
@@ -17,7 +16,7 @@ console.log(document);
 let createElement = document.createElement("div");
 console.log(createElement);
 
-console.log(document.querySelector("#firstchild"));
+//console.log(document.querySelector("#firstchild"));
 
 // Establecer algun texto mediante unos keys de innerHTML o innerTEXT
 
@@ -27,10 +26,9 @@ console.log(document.querySelector("#firstchild"));
 //   "JS aunque es dificil al principio es dem cool a la larga :)";
 
 // usando innerText
-// innerText()
-createElement.innerText =
-  "JS aunque es dificil al principio es dem cool a la larga :)";
-console.log(createElement);
+// innerText();
+createElement.innerText = "me gusta la pizza)";
+// console.log(createElement);
 
 // Como anexar elementos creados en js al doc de HTML
 
@@ -43,6 +41,7 @@ let parentElement = document
 
 // Version 2 - Añadir Clases
 // Usando className property para añadirle una clase
+
 createElement.className = "ejemplo1";
 console.log(createElement);
 
@@ -53,14 +52,11 @@ console.log(createElement);
 
 // Vamos a utilizar el método JavaScript insertBefore() que acepta dos parámetros, el newNode y el existingNode en este orden => document.insertBefore(newNode, existingNode).
 
-// add comment
+// Uncomment
 const parentEl = document.getElementById("parent");
 const firstEl = document.getElementById("firstchild");
-
-// add comment
 let createElementTwo = document.createElement("div");
 let innerText = (createElementTwo.innerText = "I love javascript till I die");
-
 parentEl.insertBefore(createElementTwo, firstEl);
 
 // Cómo reemplazar un elemento hijo
@@ -68,18 +64,21 @@ parentEl.insertBefore(createElementTwo, firstEl);
 
 let firstChildElement = document.querySelector("#firstchild");
 const parentElReplaceChild = document.getElementById("parent");
-
 let newElement = document.createElement("div");
 let innerTextReplaceChild = (newElement.innerText = "I love snowboarding");
-
 parentElReplaceChild.replaceChild(newElement, firstChildElement);
 
 // Cómo eliminar un elemento hijo
 // Vamos a utilizar el método JavaScript removeChild() que sólo acepta un parámetro ()que es el elemento que quieres eliminar, que en este caso es nuestro primer elemento original. Funciona en este orden => document.removeChild(element)
-let removeParentElement = document.getElementById("parent");
+
+// let removeParentElement = document.getElementById("parent");
 let whatWeWillRemove = document.getElementById("secondchild");
-//let whatWeWillRemove = document.getElementsByClassName("secondChild");
-removeParentElement.removeChild(whatWeWillRemove);
+// //let whatWeWillRemove = document.getElementsByClassName("secondChild");
+// removeParentElement.removeChild(whatWeWillRemove);
+
+let removeChildElement = document
+  .getElementById("parent")
+  .removeChild(whatWeWillRemove);
 
 /// ---------------------------------
 // CSS
@@ -97,20 +96,16 @@ removeParentElement.removeChild(whatWeWillRemove);
 // 3. variable que apunta al boton y darle un evento
 // 4. crear funcion
 
-//const buttonElement = document.getElementById("master");
-
-//const addFunction = () => buttonElement.classList.add("my-button");
-
-//buttonElement.addEventListener("click", addFunction);
+// const buttonElement = document.getElementById("master");
+// const addFunction = () => buttonElement.classList.add("my-button");
+// buttonElement.addEventListener("click", addFunction);
 
 // Cómo eliminar una clase
 // Siguiendo con el mismo ejemplo anterior, vamos a eliminar el estilo CSS, esta vez con classList.remove() en JavaScript. Seguramente has adivinado ya lo que va a pasar, ¿verdad?
 
 // const buttonElementDelete = document.getElementById("master");
-
 // const removeElement = () =>
 //   document.querySelector(".box-display").classList.remove("remove-test");
-
 // buttonElementDelete.addEventListener("click", removeElement);
 
 // Cómo alternar una clase
@@ -127,6 +122,7 @@ removeParentElement.removeChild(whatWeWillRemove);
 const buttonElementToggle = document.getElementById("master");
 
 const toggleFunction = () => {
+  //alert("hello");
   document.querySelector(".box-display").classList.toggle("toggle-test");
 };
 
@@ -139,8 +135,6 @@ buttonElementToggle.addEventListener("click", toggleFunction);
 // 1º - Crea un <p></p> dentro de un tag de tipo <div id="insert-p"></div>
 
 // 2º - Crea un <div id="nested"></div> desde código
-
-// variation02 - using "id" prop
 
 // 3º - Crea contenido de texto del elemento <p></p> creado para introducir el siguiente texto: "Programming is my great"
 
