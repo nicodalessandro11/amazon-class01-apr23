@@ -23,17 +23,22 @@ console.log("DOM Manipulation Intro Class:");
 
 // Es importante señalar que algunas de las funciones que se mencionan anteriormente pueden ser bloqueadas por el navegador si la página no es cargada en modo seguro (https) o si el usuario tiene habilitadas las restricciones de popups.
 
-console.log(window);
+//START HERE
+
+// uncommment
+// console.log(window);
 
 // El Documento
 // La interfaz Document representa cualquier página web cargada en el navegador y sirve como punto de entrada al contenido de la página web, que es el árbol DOM (Document Object Model).
 // El árbol DOM incluye elementos como <body> y <table>, entre muchos otros. Proporciona funcionalidad globalmente al documento, como obtener la URL de la página y crear nuevos elementos en el documento.
-console.log(document);
-console.log(document.title);
-console.log(document.URL);
-console.log(document.doctype);
-console.log(document.head);
-console.log(document.body);
+
+// uncomment
+// console.log(document);
+// console.log(document.title);
+// console.log(document.URL);
+// console.log(document.doctype);
+// console.log(document.head);
+// console.log(document.body);
 
 // Cómo seleccionar elementos en el DOM
 // Para poder manipular un elemento en el DOM, tienes que seleccionar ese elemento en particular. Por suerte para nosotros tenemos 4 formas principales de seleccionar elementos.
@@ -43,31 +48,40 @@ console.log(document.body);
 // 1. getElementById Method
 // // La forma más común de acceder a un elemento HTML es utilizar el id del elemento.
 //El id distingue entre mayúsculas y minúsculas. Por ejemplo, el "dom-manipulation" y el "Dom-manipulation" son ids totalmente diferentes.
-console.log(document.getElementById("wutang"));
+
+// uncomment
+//console.log(document.getElementById("wutang"));
 
 // 2. getElementsByClassName() Method
 // Este método devuelve una colección de todos los elementos del documento con el nombre de clase especificado.
 // Por ejemplo, nuestra página HTML de abajo contiene 5 elementos con class="wuTang".
-console.log(document.getElementsByClassName("wuTang"));
-console.log(document.getElementsByClassName("wuTang")[3]);
+
+// uncomment
+//console.log(document.getElementsByClassName("wuTang"));
+//console.log(document.getElementsByClassName("wuTang")[3]);
 
 // 3. getElementsByTagName() Method
 // Este método acepta un nombre de etiqueta y devuelve todos los elementos del nombre de etiqueta especificado en el orden en que aparecen en el documento.
-console.log(document.getElementsByTagName("h5"));
-console.log(document.getElementsByTagName("h5")[4]);
+
+//console.log(document.getElementsByTagName("h5"));
+//console.log(document.getElementsByTagName("h5")[4]);
 
 // 4. querySelector() Method
 // Devuelve el primer valor que coincida con el selector que se le da. Este método puede aceptar todos los selectores de estilo CSS, lo que le permite seleccionar por etiqueta, clase o ID.
-console.log(document.querySelector("#query-selector"));
-console.log(document.querySelector(".hipHop"));
-console.log(document.querySelector(".myLove"));
-console.log(document.querySelector("h5"));
-console.log(document.querySelector("#query-selector .hipHop .myLove"));
-console.log(document.querySelector("#query-selector .myLove"));
+
+// uncomment
+// console.log(document.querySelector("#query-selector"));
+// console.log(document.querySelector(".hipHop"));
+// console.log(document.querySelector(".myLove"));
+// console.log(document.querySelector("h5"));
+// console.log(document.querySelector("#query-selector .hipHop .myLove"));
+// console.log(document.querySelector("#query-selector .myLove"));
 
 // 5.querySelectorAll() Method
 // Funciona de forma similar a la anterior, que devuelve una colección de listas de nodos con todos los elementos coincidentes.
-console.log(document.querySelectorAll(".wuTang"));
+
+// uncomment
+// console.log(document.querySelectorAll(".wuTang"));
 
 // --------------------------------------------
 
@@ -93,25 +107,36 @@ console.log(document.querySelectorAll(".wuTang"));
 // - previousElementSibling
 
 // Last Element Child
-console.log(document.querySelector("#traverse-document").lastElementChild);
+
+// uncomment
+// console.log(document.querySelector("#traverse-document").lastElementChild);
 
 // First Element Child
-console.log(document.querySelector("#traverse-document").firstElementChild);
+
+// uncomment
+// console.log(document.querySelector("#traverse-document").firstElementChild);
 
 // Children
-console.log(document.querySelector("#traverse-document").children);
-console.log(document.querySelector("#traverse-document").children[4]);
+
+// uncomment
+// console.log(document.querySelector("#traverse-document").children);
+// console.log(document.querySelector("#traverse-document").children[4]);
 
 // parentNode
-console.log(document.querySelector("#second-child").parentNode);
+// uncomment
+// console.log(document.querySelector("#second-child").parentNode);
 
 // parentElement
-console.log(document.querySelector("#second-child").parentElement);
+// uncomment
+// console.log(document.querySelector("#second-child").parentElement);
 
 // nextElementSibling
-console.log(document.querySelector("#traverse-document").nextElementSibling);
+// uncomment
+// console.log(document.querySelector("#traverse-document").nextElementSibling);
 
 // previousElementSibling
-console.log(
-  document.querySelector("#traverse-document").previousElementSibling
-);
+
+// uncomment
+// console.log(
+//   document.querySelector("#traverse-document").previousElementSibling
+// );

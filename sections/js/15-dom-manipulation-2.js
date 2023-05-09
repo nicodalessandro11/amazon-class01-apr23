@@ -137,49 +137,14 @@ buttonElementToggle.addEventListener("click", toggleFunction);
 // BLOCK 001
 //
 // 1º - Crea un <p></p> dentro de un tag de tipo <div id="insert-p"></div>
-// Solution
-let newEl = document.createElement("p");
-let newInyectionElement = document
-  .querySelector("#insert-p")
-  .appendChild(newEl);
 
 // 2º - Crea un <div id="nested"></div> desde código
-// Solution
-let div = document.createElement("div");
-// variation01 - using method
-div.setAttribute("id", "nested");
 
 // variation02 - using "id" prop
-//div.id = "nested"
-
-// check solution
-//console.log(div);
 
 // 3º - Crea contenido de texto del elemento <p></p> creado para introducir el siguiente texto: "Programming is my great"
-newEl.innerText = "Programming is great";
-console.log(newEl);
-
-// Alexis Version 3
-let pElement = document.createElement("p");
-let newContent = document.createTextNode("Programmin' is my great");
-pElement.appendChild(newContent);
-console.log(newContent);
 
 //4º - Crea una función que cambie el contenido del texto de un <p></p> en función a una variable string.
-
-// Cristina's Version
-function cambiaContenido(contenido) {
-  newEl.innerText = contenido;
-}
-cambiaContenido("Version de Cris");
-console.log(newEl);
-
-// Alexis
-function changeText(text) {
-  pElement.addTextNode = text;
-}
-console.log(changeText("Version de Alexis"));
-console.log(pElement);
 
 //
 //
@@ -189,50 +154,4 @@ console.log(pElement);
 //
 // Block 002
 
-// 1º - Crea un elemento de color verde y un botón para cambiar el color de verde a rojo.
-
-// Part 01- Crear Elemento
-const createCSSElement = document.createElement("div");
-createCSSElement.innerHTML =
-  "CSS is ready! <button id='turn-to-red'> Turn to red</button>";
-let cssElement = document.querySelector("#itOne").appendChild(createCSSElement);
-
-// Part 02 - Le añadimos la clase
-createCSSElement.classList += "green-box";
-// Part 03 - selecionamos la hja de estilo que queremos modificar
-const sheet = document.styleSheets[0];
-console.log(sheet);
-// Part 04 seleccionamos la propiedad cssRules dentro de la variable sheet que conitiene hoha de estilos
-const rules = sheet.cssRules;
-console.log(rules);
-// Part 05  - revisamos cada regla para cceder a ella. Debe estar escrita aunque este vacia o de lo contrario no se encuentrorar.
-for (let i = 0; i < rules.length; i++) {
-  // si se encuentra la regla concreta, se modifica siguiendo el esquema habitual
-  if (rules[i].selectorText === ".green-box") {
-    rules[i].style.width = "300px";
-    rules[i].style.height = "300px";
-    rules[i].style.background = "green";
-    break;
-  }
-}
-
-// El boton que convierte el fondo en rojo :)
-const button = document.querySelector("#turn-to-red");
-// button.addEventListener("tipo de evento que queremos usar === click", podremos inyectar o una llamada a una funcioon o las funciones anonimas dentro de un addEventListener)
-//button.addEventListener("click", () => {}) === button.addEventListener("click", functin() {})\
-button.addEventListener("click", () => {
-  for (let i = 0; i < rules.length; i++) {
-    if (rules[i].selectorText === ".green-box") {
-      rules[i].style.background = "red";
-      break;
-    }
-  }
-});
-
-// 2º - Crea un elemento <div></div> y asignale una clase "green-box" que haga que sea una caja de 100px de alto y ancho de color verde.
-
-// 3º - Crea una <div class="remove-class"></div> y elimínale la clase mediante js. La clase remove-class debe hacer que el elemento mida 100vw de ancho y 100px de alto y tener un background azul.
-
-// 4º 1 - Crea un botón que, al ser pulsado, introduzca en el dom un <p>Texto insertado</p>
-
-// 5º - Crea un botón que, al ser pulsado, introduzca una tabla de tres columnas y tres filas.
+// ADD AFTER CLASS
