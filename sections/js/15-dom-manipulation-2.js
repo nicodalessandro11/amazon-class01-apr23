@@ -136,7 +136,7 @@ buttonElementToggle.addEventListener("click", toggleFunction);
 
 // 2º - Crea un <div id="nested"></div> desde código
 
-// 3º - Crea contenido de texto del elemento <p></p> creado para introducir el siguiente texto: "Programming is my great"
+// 3º - Crea contenido de texto del elemento <p></p> creado para introducir el siguiente texto: "Programming is my great experience"
 
 //4º - Crea una función que cambie el contenido del texto de un <p></p> en función a una variable string.
 
