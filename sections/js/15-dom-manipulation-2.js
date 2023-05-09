@@ -132,13 +132,7 @@ buttonElementToggle.addEventListener("click", toggleFunction);
 
 // BLOCK 001
 //
-// 1º - Crea un <p></p> dentro de un tag de tipo <div id="insert-p"></div>
-
-// 2º - Crea un <div id="nested"></div> desde código
-
-// 3º - Crea contenido de texto del elemento <p></p> creado para introducir el siguiente texto: "Programming is my great experience"
-
-//4º - Crea una función que cambie el contenido del texto de un <p></p> en función a una variable string.
+// 1. Crean dentro del body tag un elemento tipo P que contenga el texto "me gusta JS".
 
 //
 //
