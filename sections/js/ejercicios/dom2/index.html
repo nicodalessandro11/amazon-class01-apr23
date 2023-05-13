@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicios DOM 2</title>
+    <style>
+      section {
+        border: 1px solid red;
+        margin: 1rem 0rem;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      section:nth-of-type(3) div {
+        display: flex;
+        justify-content: space-between;
+      }
+      .verde {
+        background: green;
+        padding: 1rem 2rem;
+        color: white;
+        font-size: 16px;
+        border-radius: 24px;
+        cursor: pointer;
+      }
+      .roja {
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Ejercicio 1 -->
+    <section id="ejParentEl">
+      <h1 id="ej1h1">Todavia no me han modificado</h1>
+      <button id="ej1Btn">Click me!</button>
+    </section>
+    <!-- Ejercicio 2 -->
+    <section>
+      <h1 id="miH1">OFF</h1>
+      <button id="miBoton">Encender</button>
+    </section>
+    <!-- Ejercicio 3 -->
+    <section>
+      <h1 id="cuenta">0</h1>
+      <div>
+        <button id="menosDos">dblclick -2</button>
+        <button id="menosUno">click -1</button>
+        <button id="masUno">click +1</button>
+        <button id="masDos">dblclick +2</button>
+      </div>
+    </section>
+    <section>
+      <button id="ejCuatroBtn" class="verde">Soy Verde</button>
+    </section>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
