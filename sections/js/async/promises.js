@@ -1,4 +1,5 @@
-console.log("Promises");
+console.log("Usando Promesas");
+console.log("------------------");
 
 // Usando promesas
 
@@ -7,66 +8,40 @@ console.log("Promises");
 // Las promesas en JavaScript son un mecanismo para manejar la programación asíncrona. Una promesa es un objeto que representa la terminación o el fracaso eventual de una operación asíncrona. Proporcionan una interfaz para encadenar operaciones asíncronas de manera similar a como se encadenan operaciones síncronas.
 // Se utilizan para evitar el uso de callbacks anidados (callback hell) y para tener un control más sencillo de los errores.
 
-// Idea es sencilla, es un metodo nuevo de JS  que contiene 2 funciones
+// Idea es sencilla, es un metodo nuevo de JS  que contiene 2 funciones dentro
 
-// 1ra Funcion - Resuelve / Reolve - Se llama cuando una tarea es exitosa(couando el hijo suba al arbol y revisa el estado del tiempo. Independiente del estado del tiempo.)
+// 1ra Funcion - Resuelve / Resolve - Se llama cuando una tarea es exitosa(couando el hijo suba al arbol y revisa el estado del tiempo. Independiente del estado del tiempo.)
 
 // 2do Funcion = Rechaza . Rejects - se llama cuando nos encontramos con cualquiere error (el hijo nunca se pudo subir al arbol)
 
-// const sonChecksWeather = new Promise((resolve, reject) => {
-//   setTimeout(() => {
-//     let possibleOutcome = ["Sunny", "Rainy", "Anaconda Error"];
-//     let randomNumber = Math.floor(Math.random() * 3);
-//     const result = possibleOutcome[randomNumber];
-//     console.log(
-//       `Dad I went to check the weather and the weather today is: ${result}`
-//     );
-
-//     // PROMESAS SE ACTUAN ACA:
-//     if (result === "Sunny" || result === "Rainy") {
-//       resolve(result);
-//     } else {
-//       reject(
-//         new Error(
-//           "Dad I could not get up the tree and I could check the weather, sorry....."
-//         ) &&
-//           console.log(
-//             "Dad I could not get up the tree and I could check the weather, sorry....."
-//           )
-//       );
-//     }
-//   }, 2000);
-// });
-
-const sonChecksWeather = new Promise((resolve, reject) => {
-  let possibleOutcome = ["Sunny", "Rainy", "Anaconda Error"];
+// Hijo - Function
+const elHijoChequeaElTiempo = new Promise((resolve, reject) => {
+  let opcionesPosibles = ["sunny", "rainy", "unexpected error"];
   let randomNumber = Math.floor(Math.random() * 3);
-  const result = possibleOutcome[randomNumber];
-  console.log(
-    `Dad I went to check the weather and the weather today is: ${result}`
-  );
+  let resultado = opcionesPosibles[randomNumber];
+  console.log(`Papa, fui a revisar y vi que ${resultado}`);
 
-  // PROMESAS SE ACTUAN ACA:
-  if (result === "Sunny" || result === "Rainy") {
-    resolve(result);
+  // Promesas se efectuan aca :)
+  if (resultado === "sunny" || resultado === "rainy") {
+    resolve(resultado);
   } else {
-    reject(
-      new Error(
-        "Dad I could not get up the tree and I could check the weather, sorry....."
-      ) &&
-        console.log(
-          "Dad I could not get up the tree and I could check the weather, sorry....."
-        )
-    );
+    reject(new Error("Papa no pude revisar el tiempo....")) &&
+      console.log("Papa no pude revisar el tiempo....");
   }
 });
 
-const fatherWillDecide = sonChecksWeather.then((weather) => {
-  if (weather === "Sunny") {
-    console.log("I have decided that we are going fishing!!!");
-  } else {
+// El padre decide function
+
+const elPadreDecide = elHijoChequeaElTiempo.then((tiempoRevisadoPorElNene) => {
+  if (tiempoRevisadoPorElNene === "sunny") {
     console.log(
-      "It's going to rain so, I have decided that we are staying in playing playstation!"
+      "Ok Hijo, gracias por revisar el tiempo, debido a que hay buen tiempo vamos a pescar!"
     );
+  } else if (tiempoRevisadoPorElNene === "rainy") {
+    console.log(
+      "OK Hijo, gracias por revisar el tiempo,debido a que esta lloviendo, NO podemos ir a pescar! "
+    );
+  } else {
+    console.log("Veo que mi hijo no pudo revisar y hay un error....");
   }
 });

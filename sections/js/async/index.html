@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      * {
+        font-size: 24px;
+      }
+    </style>
   </head>
   <body>
     <p>
@@ -22,22 +27,57 @@
       operación asíncrona, y proporciona una interfaz para encadenar operaciones
       asíncronas de manera similar a como se encadenan operaciones síncronas.
     </p>
-    <p>
-      Algunos ejemplos de operaciones asíncronas comunes en JavaScript incluyen:
-      Carga de archivos: utilizando el método FileReader.readAsDataURL() para
-      cargar un archivo desde el dispositivo del usuario y mostrarlo en una
-      página web. Solicitudes de red: utilizando el objeto XMLHttpRequest o la
-      función fetch() para enviar una solicitud HTTP a un servidor y recibir una
-      respuesta. Operaciones de temporizador: utilizando la función setTimeout()
-      para ejecutar una función después de un cierto tiempo o la función
-      setInterval() para ejecutar una función cada cierto tiempo. Operaciones de
-      base de datos: utilizando una librería como IndexedDB para realizar
-      operaciones de lectura y escritura en una base de datos local. Operaciones
-      en un Web Worker: Utilizando un web worker para realizar tareas pesadas en
-      un hilo separado. Eventos de animaciones: Utilizando la API de animaciones
-      requestAnimationFrame() para ejecutar una función en cada frame de la
-      animación.
-    </p>
+
+    <ul>
+      <li>
+        Carga de recursos externos: Cuando una página web necesita cargar
+        recursos externos, como imágenes, hojas de estilo o scripts, se pueden
+        utilizar operaciones asíncronas. Al cargar estos recursos de forma
+        asíncrona, la página web puede seguir cargando y mostrando contenido
+        mientras obtiene estos recursos externos en segundo plano. Esto mejora
+        el rendimiento general y la experiencia del usuario.
+      </li>
+      <li>
+        Realizar peticiones HTTP: Cuando se envían peticiones HTTP a APIs o
+        servidores para obtener datos, se suelen utilizar operaciones
+        asíncronas. En lugar de bloquear toda la ejecución del código JavaScript
+        mientras se espera la respuesta, las operaciones asíncronas permiten que
+        el código siga ejecutándose, y una función de devolución de llamada o
+        una promesa pueden gestionar la respuesta cuando llegue. Esto permite
+        que la página web siga respondiendo y evita que se bloquee o deje de
+        responder durante la solicitud.
+      </li>
+      <li>
+        Cálculos que consumen tiempo: A veces, JavaScript puede realizar
+        cálculos complejos que requieren mucho tiempo. Al utilizar operaciones
+        asíncronas, estos cálculos pueden descargarse en un subproceso o
+        trabajador independiente, lo que permite que el subproceso principal
+        siga respondiendo y garantiza que la página web no se bloquee o deje de
+        responder durante el cálculo. Una vez completado el cálculo, el
+        resultado puede ser devuelto al hilo principal para su posterior
+        procesamiento.
+      </li>
+      <li>
+        Interacciones con el usuario y gestión de eventos: Las operaciones
+        asíncronas se utilizan comúnmente para manejar las interacciones del
+        usuario y los eventos. Por ejemplo, cuando un usuario pulsa un botón o
+        envía un formulario, se pueden activar operaciones asíncronas para
+        gestionar el evento y realizar tareas como la validación de datos, el
+        envío de datos a un servidor o la actualización de la interfaz de
+        usuario. Al manejar estas operaciones de forma asíncrona, la página web
+        sigue siendo interactiva y responde a otras acciones del usuario.
+      </li>
+      <li>
+        Temporizadores y retardos: Las operaciones asíncronas se utilizan para
+        manejar temporizadores y retardos en JavaScript. Por ejemplo, la función
+        setTimeout permite ejecutar un fragmento de código tras un retardo
+        especificado. Durante este retardo, otras operaciones pueden continuar
+        ejecutándose. Del mismo modo, los intervalos establecidos por
+        setInterval pueden ejecutar repetidamente código de forma asíncrona a
+        intervalos especificados.
+      </li>
+    </ul>
+
     <h1>Historia</h1>
     <p>Padre e hijo</p>
     <p>
@@ -65,6 +105,6 @@
       </ul>
     </div>
 
-    <script src="asyncTryCatch.js"></script>
+    <script src="asyncAwaitTryCatch.js"></script>
   </body>
 </html>
